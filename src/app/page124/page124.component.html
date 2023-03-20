@@ -1,0 +1,510 @@
+<div class="sidebar">
+    <div class="MenuButton">
+      <p>Valider</p>
+    </div>
+    <div class="TitlePage">
+      <p>Rapport de Ventes</p>
+    </div>
+    <div class="CancelButton" routerLink="/12">
+      <p>X</p>
+    </div>
+</div>
+<div class="container">
+    <div class="d1" id="source">
+        <div class="tableCategory" *ngFor="let cat of ProductCategories">
+            <table>
+                <colgroup span="3"></colgroup>
+                <thead>
+                    <tr>
+                        <th id="ProductName" colspan="3" scope="colgroup">
+                            <div class="CategoryName">
+                              {{cat.ProductCategoryName}}
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th id="ProductName" scope="col">
+                          <div class="ProductTable">
+                            {{Product}}
+                          </div>
+                        </th>
+                        <th id="Quant" class="headcol" scope="col">
+                          <div class="QuantTable">
+                            {{ Quant }}
+                          </div>
+                        </th>
+                        <th id="Dose" class="headcol" scope="col">
+                          <div class="QuantTable">
+                            {{ Dose }}
+                          </div>
+                        </th>
+                      </tr>
+                </thead>
+                <tbody class="tableBody" style="border:none">
+                    <tr *ngFor="let prod of cat.Products; let i = index" style="border:none;">
+                      <th style="background: #5A5A5A; color: white; border: 1px solid #5A5A5A; text-align: center;" class="productNameRow" contenteditable="true" (click)="openDialog('Product Name', ProductName)" (blur)="ValidProductName(prod, ProductName.innerText)" #ProductName>
+                        {{prod.ProductName}}
+                      </th>
+                      <th style="background: #5A5A5A; color: white; border: 1px solid #5A5A5A; text-align: center;" contenteditable="true" (click)="openDialog('Product Quantity', ProductQte)" (blur)="ValidProductQte(prod, ProductQte.innerText)" #ProductQte>
+                        {{prod.QteStock}}
+                      </th>
+                      <th style="background: #5A5A5A; color: white; border: 1px solid #5A5A5A; text-align: center;" contenteditable="true">
+                        <div *ngIf='prod.ProductName != ""'>
+                          {{prod.UniteTypeMsg ? 'Gr' : 'Cl'}}
+                        </div>
+                      </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <div class="CategoryName">
+                                TOTAL BARS
+                              </div>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+          </div>
+    </div>
+    <div class="d2" id="target">
+      <div class="tableCategory" *ngFor="let cat of ProductCategories">
+        <table>
+          <thead>
+            <tr>
+              <th style="border:none;" colspan="2">
+                <div class="GreenCaseTitleThrid">
+                  Bar 1
+                </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th style="border:none;" colspan="2">
+                <div class="GreenCaseTitleThrid">
+                  Bar 2
+                </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th style="border:none;" colspan="2">
+                <div class="GreenCaseTitleThrid">
+                  Bar 3
+                </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th style="border:none;" colspan="2">
+                <div class="GreenCaseTitleThrid">
+                  Bar 4
+                </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th style="border:none;" colspan="2">
+                <div class="GreenCaseTitleThrid">
+                  Bar 5
+                </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th style="border:none;" colspan="2">
+                <div class="GreenCaseTitleThrid">
+                  Bar 6
+                </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th style="border:none;" colspan="2">
+                <div class="GreenCaseTitleThrid">
+                  Bar 7
+                </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th style="border:none;" colspan="2">
+                <div class="GreenCaseTitleThrid">
+                  Bar 8
+                </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th style="border:none;" colspan="2">
+                <div class="GreenCaseTitleThrid">
+                  Bar 9
+                </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th style="border:none;" colspan="2">
+                <div class="GreenCaseTitleThrid">
+                  Bar 10
+                </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th style="border:none;" colspan="2">
+                <div class="RedCaseTitleThrid">
+                  Serveur 1
+                </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th style="border:none;" colspan="2">
+                <div class="RedCaseTitleThrid">
+                  Serveur 2
+                </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th style="border:none;" colspan="2">
+                <div class="RedCaseTitleThrid">
+                  Serveur 3
+                </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th style="border:none;" colspan="2">
+                <div class="RedCaseTitleThrid">
+                  Serveur 4
+                </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th style="border:none;" colspan="2">
+                <div class="RedCaseTitleThrid">
+                  Serveur 5
+                </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th style="border:none;" colspan="2">
+                <div class="BlueCaseTitleThrid">
+                  Total Produits
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <th >
+                <div  class="GreenCaseTitle">
+                  Qté vendue
+                </div>
+              </th>
+              <th >
+                <div  class="GreenCaseTitle">
+                    Prix de vente
+                  </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th >
+                <div  class="GreenCaseTitle">
+                  Qté vendue
+                </div>
+              </th>
+              <th >
+                <div  class="GreenCaseTitle">
+                    Prix de vente
+                  </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th >
+                <div  class="GreenCaseTitle">
+                  Qté vendue
+                </div>
+              </th>
+              <th >
+                <div  class="GreenCaseTitle">
+                    Prix de vente
+                  </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th >
+                <div  class="GreenCaseTitle">
+                  Qté vendue
+                </div>
+              </th>
+              <th >
+                <div  class="GreenCaseTitle">
+                    Prix de vente
+                  </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th >
+                <div  class="GreenCaseTitle">
+                  Qté vendue
+                </div>
+              </th>
+              <th >
+                <div  class="GreenCaseTitle">
+                    Prix de vente
+                  </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th >
+                <div  class="GreenCaseTitle">
+                  Qté vendue
+                </div>
+              </th>
+              <th >
+                <div  class="GreenCaseTitle">
+                    Prix de vente
+                  </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th >
+                <div  class="GreenCaseTitle">
+                  Qté vendue
+                </div>
+              </th>
+              <th >
+                <div  class="GreenCaseTitle">
+                    Prix de vente
+                  </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th >
+                <div  class="GreenCaseTitle">
+                  Qté vendue
+                </div>
+              </th>
+              <th >
+                <div  class="GreenCaseTitle">
+                    Prix de vente
+                  </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th>
+                <div  class="GreenCaseTitle">
+                  Qté vendue
+                </div>
+              </th>
+              <th >
+                <div  class="GreenCaseTitle">
+                    Prix de vente
+                  </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th >
+                <div  class="GreenCaseTitle">
+                  Qté vendue
+                </div>
+              </th>
+              <th >
+                <div  class="GreenCaseTitle">
+                    Prix de vente
+                  </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th >
+                <div class="RedCaseTitle">
+                  Qté vendue
+                </div>
+              </th>
+              <th >
+                <div class="RedCaseTitle">
+                    Prix de vente
+                  </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th >
+                <div class="RedCaseTitle">
+                  Qté vendue
+                </div>
+              </th>
+              <th >
+                <div class="RedCaseTitle">
+                    Prix de vente
+                  </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th >
+                <div class="RedCaseTitle">
+                  Qté vendue
+                </div>
+              </th>
+              <th >
+                <div class="RedCaseTitle">
+                    Prix de vente
+                  </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th >
+                <div class="RedCaseTitle">
+                  Qté vendue
+                </div>
+              </th>
+              <th >
+                <div class="RedCaseTitle">
+                    Prix de vente
+                  </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th >
+                <div class="RedCaseTitle">
+                  Qté vendue
+                </div>
+              </th>
+              <th >
+                <div class="RedCaseTitle">
+                    Prix de vente
+                  </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th >
+                <div class="BlueCaseTitle">
+                  Qté vendue
+                </div>
+              </th>
+              <th >
+                <div class="BlueCaseTitle">
+                    Prix de vente
+                  </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of cat.Products">
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <th width="25px" style="visibility:hidden;"></th>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <th width="25px" style="visibility:hidden;"></th>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <th width="25px" style="visibility:hidden;"></th>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <th width="25px" style="visibility:hidden;"></th>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <th width="25px" style="visibility:hidden;"></th>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <th width="25px" style="visibility:hidden;"></th>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <th width="25px" style="visibility:hidden;"></th>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <th width="25px" style="visibility:hidden;"></th>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <th width="25px" style="visibility:hidden;"></th>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <th width="25px" style="visibility:hidden;"></th>
+              <td style="background: #FCE4D6; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #FCE4D6; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <th width="25px" style="visibility:hidden;"></th>
+              <td style="background: #FCE4D6; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #FCE4D6; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <th width="25px" style="visibility:hidden;"></th>
+              <td style="background: #FCE4D6; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #FCE4D6; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <th width="25px" style="visibility:hidden;"></th>
+              <td style="background: #FCE4D6; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #FCE4D6; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <th width="25px" style="visibility:hidden;"></th>
+              <td style="background: #FCE4D6; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #FCE4D6; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <th width="25px" style="visibility:hidden;"></th>
+              <td style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+            </tr>
+          </tbody>
+        </table>       
+      </div> 
+      <div class="tableCategory">
+        <table>
+            <thead>
+                <tr>
+                   <th>
+                       <div class="TotalBar" style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" >
+                           0,00 l
+                       </div>
+                   </th>
+                   <th width="25px" style="visibility:hidden;"></th>
+                   <th>
+                    <div class="TotalBar" style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" >
+                        0,00 l
+                    </div>
+                </th>
+                <th width="25px" style="visibility:hidden;"></th>
+                <th>
+                    <div class="TotalBar" style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" >
+                        0,00 l
+                    </div>
+                </th>
+                <th width="25px" style="visibility:hidden;"></th>
+                <th>
+                    <div class="TotalBar" style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" >
+                        0,00 l
+                    </div>
+                </th>
+                <th width="25px" style="visibility:hidden;"></th>
+                <th>
+                    <div class="TotalBar" style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" >
+                        0,00 l
+                    </div>
+                </th>
+                <th width="25px" style="visibility:hidden;"></th>
+                <th>
+                    <div class="TotalBar" style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" >
+                        0,00 l
+                    </div>
+                </th>
+                <th width="25px" style="visibility:hidden;"></th>
+                <th>
+                    <div class="TotalBar" style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" >
+                        0,00 l
+                    </div>
+                </th>
+                <th width="25px" style="visibility:hidden;"></th>
+                <th>
+                    <div class="TotalBar" style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" >
+                        0,00 l
+                    </div>
+                </th>
+                <th width="25px" style="visibility:hidden;"></th>
+                <th>
+                    <div class="TotalBar" style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" >
+                        0,00 l
+                    </div>
+                </th>
+                <th width="25px" style="visibility:hidden;"></th>
+                <th>
+                    <div class="TotalBar" style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" >
+                        0,00 l
+                    </div>
+                </th>
+                <th width="25px" style="visibility:hidden;"></th>
+                <th>
+                    <div class="TotalBar" style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" >
+                        0,00 l
+                    </div>
+                </th>
+                <th width="25px" style="visibility:hidden;"></th>
+                <th>
+                    <div class="TotalBar" style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" >
+                        0,00 l
+                    </div>
+                </th>
+                <th width="25px" style="visibility:hidden;"></th>
+                <th>
+                    <div class="TotalBar" style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" >
+                        0,00 l
+                    </div>
+                </th>
+                <th width="25px" style="visibility:hidden;"></th>
+                <th>
+                    <div class="TotalBar" style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" >
+                        0,00 l
+                    </div>
+                </th>
+                <th width="25px" style="visibility:hidden;"></th>
+                <th>
+                    <div class="TotalBar" style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" >
+                        0,00 l
+                    </div>
+                </th>
+                <th width="25px" style="visibility:hidden;"></th>
+                <th>
+                    <div class="TotalBar" style="background: #595959; color: white; border: 1px solid white; text-align: center;" contenteditable="true" >
+                        0,00 l
+                    </div>
+                </th>
+                </tr>
+            </thead>
+        </table>
+      </div>          
+    </div>      
+</div>

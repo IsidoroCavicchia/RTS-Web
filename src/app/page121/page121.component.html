@@ -1,0 +1,342 @@
+<div class="sidebar">
+  <div class="MenuButton" (click)="SaveProduct()">
+    <p>Valider</p>
+  </div>
+  <div class="TitlePage">
+    <p>{{ Title }}</p>
+  </div>
+  <div class="CancelButton" routerLink="/12">
+    <p>X</p>
+  </div>
+</div>
+<div class="container" >
+  <div class="tarifSelect">
+    <select (change)="tarifBarChange($event.target.value)" [ngModel]="SelectedTarifId">
+      <option *ngFor="let tb of ProductCategories.TarifBarList" [ngValue]="tb.TarifBarId">{{tb.TarifBarName}}</option>
+    </select>
+  </div>
+  <div class="d1" id="source">
+   <div class="tableCategory" *ngFor="let cat of ProductCategories">
+    <table>
+      <colgroup span="3"></colgroup>
+      <thead>
+        <tr>
+          <th id="ProductName" colspan="3" scope="colgroup">
+            <div class="CategoryName">
+              {{cat.ProductCategoryName}}
+            </div>
+          </th>
+        </tr>
+        <tr>
+          <th id="ProductName" scope="col">
+            <div class="ProductTable">
+              {{Product}}
+            </div>
+          </th>
+          <th id="Quant" class="headcol" scope="col">
+            <div class="QuantTable">
+              {{ Quant }}
+            </div>
+          </th>
+          <th id="Dose" class="headcol" scope="col">
+            <div class="QuantTable">
+              {{ Dose }}
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="tableBody" style="border:none">
+        <tr *ngFor="let prod of cat.Products; let i = index" style="border:none;">
+          <th style="background: #5A5A5A; color: white; border: 1px solid #5A5A5A; text-align: center;" class="productNameRow" contenteditable="true" (click)="openDialog('Product Name', ProductName)" (blur)="ValidProductName(prod, ProductName.innerText)" #ProductName>
+            {{prod.ProductName}}
+          </th>
+          <th style="background: #5A5A5A; color: white; border: 1px solid #5A5A5A; text-align: center;" contenteditable="true" (click)="openDialog('Product Quantity', ProductQte)" (blur)="ValidProductQte(prod, ProductQte.innerText)" #ProductQte>
+            {{prod.QteStock}}
+          </th>
+          <th style="background: #5A5A5A; color: white; border: 1px solid #5A5A5A; text-align: center;" contenteditable="true">
+            <div *ngIf='prod.ProductName != ""'>
+              {{prod.UniteTypeMsg ? 'Gr' : 'Cl'}}
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+   </div>
+  </div>
+  <div class="d2" id="target">
+    <div class="tableCategory" *ngFor="let cat of ProductCategories">
+      <table>
+        <colgroup span="3"></colgroup>
+          <thead>
+            <tr>
+              <th style="border: none;" colspan="6">
+                <div class="RedCaseTitle">
+                  {{ Achat }}
+                </div>
+              </th>
+              <th width="25px" style="visibility: hidden;"></th>
+              <th style="border: none;" colspan="4">
+                <div class="BlueCaseTitle">
+                  {{ Poids }}
+                </div>
+              </th>
+              <th width="25px" style="visibility: hidden;"></th>
+              <th style="border: none;" colspan="4">
+                <div class="GreenCaseTitle">
+                  {{ Vente }}
+                </div>
+              </th>
+              <th width="25px" style="visibility: hidden;"></th>
+              <th style="border: none;" >
+                <div class="BlackCaseTitle">
+                  {{ Coeficient }}
+                </div>
+              </th>
+              <th style="border: none;">
+                <div class="BlackCaseTitle" style="background:#BFBFBF; color: black;" contenteditable="true" (click)="openDialogCoeficient('Coeficient', cat, COE)" #COE>
+                  {{ cat.CoeficientRate | number: '1.1' }}
+                </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th style="border:none;" colspan="4">
+                <div class="BlueCaseTitle">
+                  {{ Tarifs }}
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <th style="border: none;" colspan="1">
+                <div class="RedCaseTitleSecond">
+                  {{ NbrUnit }}
+                </div>
+              </th>
+              <th style="border: none;" colspan="1">
+                <div class="RedCaseTitleSecond">
+                  {{ DosePerUnit }}
+                </div>
+              </th>
+              <th style="border: none;" colspan="1">
+                <div class="RedCaseTitleThrid">
+                  {{ TVA }}
+                </div>
+                <div class="RedCaseTitleThrid">
+                  {{ Taux }}
+                </div>
+              </th>
+              <th style="border: none;" colspan="1">
+                <div class="RedCaseTitleThrid" style="background: #FCE4D6;" contenteditable="true" (click)="openDialogVAT('Tva', cat, VAT)" #VAT>
+                  {{cat.VAT | number: '1.2'}} %
+                </div>
+                <div class="RedCaseTitleThrid">
+                  {{ Montant }}
+                </div>
+              </th>
+              <th style="border: none;" colspan="1">
+                <div class="RedCaseTitleSecond">
+                  {{ Prix }}
+                </div>
+              </th>
+              <th style="border: none;" colspan="1">
+                <div class="RedCaseTitleSecond">
+                  {{ Prix }}
+                </div>
+              </th>
+              <th width="25px" style="visibility: hidden;"></th>
+              <th style="border: none" colspan="1">
+                <div class="BlueCaseTitleSecond">
+                  {{ BoutPlein }}
+                </div>
+              </th>
+              <th style="border: none" colspan="1">
+                <div class="BlueCaseTitleSecond">
+                  {{ BoutVide }}
+                </div>
+              </th>
+              <th style="border: none" colspan="1">
+                <div class="BlueCaseTitleSecond">
+                  {{ Contenu }}
+                </div>
+              </th>
+              <th style="border: none" colspan="1">
+                <div class="BlueCaseTitleSecond">
+                  {{ PoidCl }}
+                </div>
+              </th>
+              <th width="25px" style="visibility: hidden;"></th>
+              <th style="border: none;" colspan="1">
+                <div class="GreenCaseTitleThrid">
+                  {{ TVA }}
+                </div>
+                <div class="GreenCaseTitleThrid">
+                  {{ Taux }}
+                </div>
+              </th>
+              <th style="border: none;" colspan="1">
+                <div class="GreenCaseTitleThrid" style="background: #E2EFDA;" contenteditable="true" (click)="openDialogVATVente('Tva', cat, VATVente)" #VATVente>
+                  {{cat.VATVente | number: '1.2'}} %
+                </div>
+                <div class="GreenCaseTitleThrid">
+                  {{ Montant }}
+                </div>
+              </th>
+              <th style="border:none">
+                <div class="GreenCaseTitleThrid">
+                  {{ PrixVente }}
+                </div>
+                <div class="GreenCaseTitleThrid">
+                  {{ Htva }}
+                </div>
+              </th>
+              <th>
+                <div class="GreenCaseTitleThrid">
+                </div>
+                <div class="GreenCaseTitleThrid">
+                  {{ Ttc }}
+                </div>
+              </th>
+              <th width="25px" style="visibility: hidden;"></th>
+              <th>
+                <div class="BlackCaseTitleSecond">
+                  {{ Voulu }}
+                </div>
+              </th>
+              <th>
+                <div class="BlackCaseTitleSecond">
+                  {{ Reel }}
+                </div>
+              </th>
+              <th width="25px" style="visibility: hidden;"></th>
+                <th>
+                  <div class="BlueCaseTitleSecond">
+                    Compta
+                  </div>
+                </th>
+                <th>
+                  <div class="BlueCaseTitleSecond">
+                    Tarif 1
+                  </div>
+                </th>
+                <th>
+                  <div class="BlueCaseTitleSecond">
+                    Tarif 2
+                  </div>
+                </th>
+                <th>
+                  <div class="BlueCaseTitleSecond">
+                    Vip
+                  </div>
+                </th>
+            </tr>
+          </thead>
+          <tbody class="tableBody" style="border:none;">
+            <tr *ngFor="let prod of cat.Products; let i = index" style="border:none;">
+              <th style="background: #FCE4D6; color: black; border: 1px solid black; text-align: center;" contenteditable="true" (click)="openDialog('Nombre unités', NbrUnit)" (blur)="ValidNbrUnit(prod, NbrUnit.innerText)" #NbrUnit>
+                {{prod.NbrUnit}}
+              </th>
+              <th style="background: #FCE4D6; color: black; border: 1px solid black; text-align: center;" contenteditable="true" (click)="openDialog('Dose par unité', DosePerUnit)" (blur)="ValidDosePerUnit(prod, DosePerUnit.innerText)" #DosePerUnit>
+                {{prod.DosePerUnit}}
+              </th>
+              <th style="background: #FCE4D6; color: black; border: 1px solid black; text-align: center;" contenteditable="false">
+                <div *ngIf="prod.ProductName != ''">
+                  {{cat.VAT | number: '1.2'}} %
+                </div>
+              </th>
+              <th style="background: #FCE4D6; color: black; border: 1px solid black; text-align: center;" contenteditable="false">
+                <div *ngIf="prod.ProductName != ''">
+                  {{prod.Montant | number: '1.2'}} €
+                </div>
+              </th>
+              <th style="background: #FCE4D6; color: black; border: 1px solid black; text-align: center;" contenteditable="false">
+                <div *ngIf="prod.ProductName != ''">
+                  {{prod.PriceAchatDose | number: '1.2'}} €
+                </div>
+              </th>
+              <th style="background: #FCE4D6; color: black; border: 1px solid black; text-align: center;" contenteditable="true"
+                  (click)="openDialog('Prix achat', Price)" (blur)="ValidPrice(prod, Price.innerText)" #Price>
+                <div *ngIf="prod.ProductName != ''">
+                  {{prod.PriceAchat | number: '1.2'}} €
+                </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" 
+                (click)="openDialog('Poids bouteille pleine', BottleFullWeight)" (blur)="ValidWeight(prod, BottleFullWeight.innerText, BottleEmptyWeight.innerText )" #BottleFullWeight>
+                {{prod.BottleFullWeight}}
+              </th>
+              <th style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" (click)="openDialog('Poid bouteille vide', BottleEmptyWeight)" (blur)="ValidWeight(prod, BottleFullWeight.innerText, BottleEmptyWeight.innerText )" #BottleEmptyWeight>
+                {{prod.BottleEmptyWeight}}
+              </th>
+              <th style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="false" #WeightContenu>
+                {{prod.WeightContenu}}
+              </th>
+              <th style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="false" #WeightCl>
+                {{prod.WeightCl | number: '1.2'}}
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;">
+                <div *ngIf="prod.ProductName != ''">
+                  {{cat.VATVente | number: '1.2'}} %
+                </div>
+              <th style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" (click)="openDialog('Poid bouteille vide', BottleEmptyWeight)" (blur)="ValidWeight(prod, BottleFullWeight.innerText, BottleEmptyWeight.innerText )" #BottleEmptyWeight>
+                <div *ngIf="prod.ProductName != '' && isNumber(prod.TVAPriceVente)">
+                  {{prod.TVAPriceVente | number: '1.2'}} €
+                </div>
+              </th>
+              <th style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="false" #WeightContenu>
+                <div *ngIf="prod.ProductName != '' && isNumber(prod.TotalPriceVenteHTVACompta)">
+                  {{prod.TotalPriceVenteHTVACompta | number: '1.2'}} €
+                </div>
+              </th>
+              <th style="background: #92D050; color: black; border: 1px solid black; text-align: center;" contenteditable="false" #WeightCl>
+                <div *ngIf="prod.ProductName != ''">
+                  <div *ngIf="SelectedTarifId == 1">
+                    {{prod.TarifCompta | number: '1.2'}} €
+                  </div>
+                  <div *ngIf="SelectedTarifId == 2">
+                    {{prod.Tarif1 | number: '1.2'}} €
+                  </div>
+                  <div *ngIf="SelectedTarifId == 3">
+                    {{prod.Tarif2 | number: '1.2'}} €
+                  </div>
+                  <div *ngIf="SelectedTarifId == 4">
+                    {{prod.TarifVIP | number: '1.2'}} €
+                  </div>
+                </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th style="background: #BFBFBF; color: black; border: 1px solid black; text-align: center;">
+                <div *ngIf="prod.ProductName != ''">
+                  {{ cat.CoeficientRate | number: '1.1' }}
+                </div>
+              </th>
+              <th style="background: gray; color: black; border: 1px solid black; text-align: center;">
+                <div [ngStyle]="prod.CoeficientReal > cat.CoeficientRate ? {'background-color' : '#92D050'} : {'background-color' : '#FF6463'}">
+                  {{ prod.CoeficientReal | number: '1.1' }}
+                </div>
+              </th>
+              <th style="visibility: hidden; padding-right: 50px;"></th>
+              <th style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;">
+                <div *ngIf="prod.ProductName != ''">
+                  {{ prod.TarifCompta | number: '1.2' }} €
+                </div>
+              </th>
+              <th style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;">
+                <div *ngIf="prod.ProductName != ''">
+                  {{ prod.Tarif1 | number: '1.2' }} €
+                </div>
+              </th>
+              <th style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;">
+                <div *ngIf="prod.ProductName != ''">
+                  {{ prod.Tarif2 | number: '1.2' }} €
+                </div>
+              </th>
+              <th style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;">
+                <div *ngIf="prod.ProductName != ''">
+                  {{ prod.TarifVIP | number: '1.2' }} €
+                </div>
+              </th>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,283 @@
+<div class="sidebar">
+    <div class="MenuButton" (click)="SaveProduct()">
+      <p>Valider</p>
+    </div>
+    <div class="TitlePage">
+      <p>Alertes stocks</p>
+    </div>
+    <div class="CancelButton" routerLink="/12">
+      <p>X</p>
+    </div>
+</div>
+<div class="container">
+    <div class="d1" id="source">
+        <div class="tableCategory" *ngFor="let cat of ProductCategories">
+            <table>
+                <colgroup span="3"></colgroup>
+                <thead>
+                    <tr>
+                        <th id="ProductName" colspan="3" scope="colgroup">
+                            <div class="CategoryName">
+                              {{cat.ProductCategoryName}}
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th id="ProductName" scope="col">
+                          <div class="ProductTable">
+                            {{Product}}
+                          </div>
+                        </th>
+                        <th id="Quant" class="headcol" scope="col">
+                          <div class="QuantTable">
+                            {{ Quant }}
+                          </div>
+                        </th>
+                        <th id="Dose" class="headcol" scope="col">
+                          <div class="QuantTable">
+                            {{ Dose }}
+                          </div>
+                        </th>
+                      </tr>
+                </thead>
+                <tbody class="tableBody" style="border:none">
+                    <tr *ngFor="let prod of cat.Products; let i = index" style="border:none;">
+                      <th style="background: #5A5A5A; color: white; border: 1px solid #5A5A5A; text-align: center;" class="productNameRow" contenteditable="true" (click)="openDialog('Product Name', ProductName)" (blur)="ValidProductName(prod, ProductName.innerText)" #ProductName>
+                        {{prod.ProductName}}
+                      </th>
+                      <th style="background: #5A5A5A; color: white; border: 1px solid #5A5A5A; text-align: center;" contenteditable="true" (click)="openDialog('Product Quantity', ProductQte)" (blur)="ValidProductQte(prod, ProductQte.innerText)" #ProductQte>
+                        {{prod.QteStock}}
+                      </th>
+                      <th style="background: #5A5A5A; color: white; border: 1px solid #5A5A5A; text-align: center;" contenteditable="true">
+                        <div *ngIf='prod.ProductName != ""'>
+                          {{prod.UniteTypeMsg ? 'Gr' : 'Cl'}}
+                        </div>
+                      </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="d2" id="target">
+      <div class="tableCategory" *ngFor="let cat of ProductCategories">
+        <table>
+          <thead>
+            <tr>
+              <th style="border:none;" colspan="4">
+                <div class="YellowCaseTitleThrid">
+                  Stock idéal Réserves
+                </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th style="border:none;" colspan="10">
+                <div class="YellowCaseTitleThrid">
+                  Stock idéal Bars
+                </div>
+              </th>
+              <th style="visibility: hidden;" width="25px"></th>
+              <th style="border:none;" rowspan="2">
+                <div class="RedCaseTitle">
+                  Total
+                </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th style="border:none;" colspan="4">
+                <div class="BlueCaseTitleThrid">
+                  Stock Réserves
+                </div>
+              </th>
+              <th width="25px" style="visibility:hidden;"></th>
+              <th style="border:none;" colspan="10">
+                <div class="GreenCaseTitleThrid">
+                  Stock Bars
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div class="YellowCaseTitle">
+                  Réserves centrale
+                </div>
+              </th>
+              <th>
+                <div class="YellowCaseTitle">
+                  Réserves 2
+                </div>
+              </th>
+              <th>
+                <div class="YellowCaseTitle">
+                  Réserves 3
+                </div>
+              </th>
+              <th>
+                <div class="YellowCaseTitle">
+                  Réserves 4
+                </div>
+              </th>
+              <th style="visibility: hidden;" width="25px"></th>
+              <th>
+                <div class="YellowCaseTitle">
+                  Bar 1
+                </div>
+              </th>
+              <th>
+                <div class="YellowCaseTitle">
+                  Bar 2
+                </div>
+              </th>
+              <th>
+                <div class="YellowCaseTitle">
+                  Bar 3
+                </div>
+              </th>
+              <th>
+                <div class="YellowCaseTitle">
+                  Bar 4
+                </div>
+              </th>
+              <th>
+                <div class="YellowCaseTitle">
+                  Bar 5
+                </div>
+              </th>
+              <th>
+                <div class="YellowCaseTitle">
+                  Bar 6
+                </div>
+              </th>
+              <th>
+                <div class="YellowCaseTitle">
+                  Bar 7
+                </div>
+              </th>
+              <th>
+                <div class="YellowCaseTitle">
+                  Bar 8
+                </div>
+              </th>
+              <th>
+                <div class="YellowCaseTitle">
+                  Bar 9
+                </div>
+              </th>
+              <th>
+                <div class="YellowCaseTitle">
+                  Bar 10
+                </div>
+              </th>
+              <th style="visibility: hidden;" width="25px"></th>
+              <th></th>
+              <th>
+                <div class="BlueCaseTitle">
+                  Réserve centrale
+                </div>
+              </th>
+              <th>
+                <div class="BlueCaseTitle">
+                  Réserve 2
+                </div>
+              </th>
+              <th>
+                <div class="BlueCaseTitle">
+                  Réserve 3
+                </div>
+              </th>
+              <th>
+                <div class="BlueCaseTitle">
+                  Réserve 4
+                </div>
+              </th>
+              <th style="visibility: hidden;" width="25px"></th>
+              <th>
+                <div class="GreenCaseTitle">
+                  Bar 1
+                </div>
+              </th>
+              <th>
+                <div class="GreenCaseTitle">
+                  Bar 2
+                </div>
+              </th>
+              <th>
+                <div class="GreenCaseTitle">
+                  Bar 3
+                </div>
+              </th>
+              <th>
+                <div class="GreenCaseTitle">
+                  Bar 4
+                </div>
+              </th>
+              <th>
+                <div class="GreenCaseTitle">
+                  Bar 5
+                </div>
+              </th>
+              <th>
+                <div class="GreenCaseTitle">
+                  Bar 6
+                </div>
+              </th>
+              <th>
+                <div class="GreenCaseTitle">
+                  Bar 7
+                </div>
+              </th>
+              <th>
+                <div class="GreenCaseTitle">
+                  Bar 8
+                </div>
+              </th>
+              <th>
+                <div class="GreenCaseTitle">
+                  Bar 9
+                </div>
+              </th>
+              <th>
+                <div class="GreenCaseTitle">
+                  Bar 10
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of cat.Products">
+              <td style="background: #FFF2CC; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #FFF2CC; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #FFF2CC; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #FFF2CC; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <th width="25px" style="visibility:hidden;"></th>
+              <td style="background: #FFF2CC; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #FFF2CC; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #FFF2CC; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #FFF2CC; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #FFF2CC; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #FFF2CC; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #FFF2CC; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #FFF2CC; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #FFF2CC; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #FFF2CC; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <th width="25px" style="visibility:hidden;"></th>
+              <td style="background: #FCE4D6; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <th width="25px" style="visibility:hidden;"></th>
+              <td style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #D9E1F2; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <th width="25px" style="visibility:hidden;"></th>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+              <td style="background: #E2EFDA; color: black; border: 1px solid black; text-align: center;" contenteditable="true" ></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>

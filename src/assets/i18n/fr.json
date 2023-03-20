@@ -1,0 +1,218 @@
+{
+  "page0": {
+    "button1": "Utilisateur",
+    "button2": "Mot de passe",
+    "buttonCenter": "Entrer"
+  },
+
+  "page1": {
+    "buttonCenter": "Menu",
+    "button1": "Paramètres",
+    "button2": "Comptabilité",
+    "button3": "Réserves",
+    "button4": "Cockpits",
+    "button5": "Sécurité",
+    "button6": "Entrées",
+    "button7": "Vestiaires",
+    "button8": "Bars",
+    "button9": "Serveurs",
+    "button10": "Toilettes"
+  },
+
+  "page11": {
+    "button1": "Entrées",
+    "button2": "Vestiaires",
+    "button3": "Bars",
+    "button4": "Toilettes",
+    "button5": "Attributions",
+    "button6": "Accès",
+    "buttonCenter": "Paramètres"
+  },
+
+  "page111": {
+
+  },
+
+  "page112": {
+    "title": "Paramètres Vestiaires"
+  },
+
+  "page113": {
+    "button1": "Création",
+    "button2": "Fiche technique",
+    "button3": "Répartition",
+    "button4": "Tarifs",
+    "button5": "Stocks idéaux",
+    "buttonCenter": "Bars"
+  },
+
+  "page1131": {
+    "title": "Création",
+    "label1": "Catégories de produits",
+    "label2": "Bars",
+    "label3": "TVA",
+    "label4": "Achat",
+    "label5": "Vente",
+    "label6": "Coefficient",
+    "label7": "Dosage en cl",
+    "label8": "Réappro auto",
+    "label9": "Stock alarme",
+    "label10": "Tarif",
+    "label11": "Seuil de rentabilit",
+    "label12": "Personnel"
+  },
+
+  "page1132": {
+    "title": "Fiche Technique",
+    "label1": "SOFTS grandes bouteilles - Accompagnements bouteilles",
+    "label2": "Nombre d'unités",
+    "label3": "Doses par unité",
+    "label4": "Prix d'achat HTVA",
+    "label5": "Bouteille pleine (gr)",
+    "label6": "Bouteille vide (gr)"
+  },
+
+  "page114": {
+    "title": "Paramètre Toilettes",
+    "label1": "Général",
+    "label2": "Information",
+    "label3": "Tarif",
+    "label4": "Toilettes",
+    "label5": "Personnel"
+  },
+
+  "page115": {
+    "buttonCenter": "Attributions",
+    "button1": "Réserves",
+    "button2": "Serveurs"
+  },
+
+  "page1151": {
+    "title": "Attributions Réserves",
+    "label1": "Corrélations",
+    "label2": "Bars",
+    "label3": "Réserves"
+  },
+
+  "page1152": {
+    "title": "Attributions Serveurs",
+    "label1": "Corélations",
+    "label2": "Bars",
+    "btn1": "valider"
+  },
+
+  "page116": {
+    "title": "Accès",
+    "label1": "Nbre d'accès autorisées"
+  },
+
+  "page12": {
+    "buttonCenter": "Comptabilité",
+    "button1": "Fiche comptable",
+    "button2": "Valorisation des stocks",
+    "button3": "Alertes stocks",
+    "button4": "Rapport de ventes",
+    "button5": "Commandes"
+  },
+
+  "page121": {
+    "title": "Fiche Comptable",
+    "product": "Produits",
+    "quant": "Quantité",
+    "dose": "Cl/Gr",
+    "nbrUnit": "Nombre d'unités",
+    "achat": "Achat",
+    "dosePerUnit": "Dose par unité",
+    "tva": "TVA",
+    "taux": "Taux",
+    "montant": "Montant",
+    "prix": "Prix d'achat",
+    "poids": "Poids",
+    "boutPlein": "Bouteilles pleine (gr)",
+    "boutVide": "Bouteilles vide (gr)",
+    "contenu": "Contenu (gr)",
+    "poidCl": "Poids 1cl (gr)",
+    "vente": "Vente",
+    "prixVente": "Prix de vente dose",
+    "htva": "HTVA",
+    "ttc": "Ttc",
+    "coeficient": "Coéficient",
+    "voulu": "Voulu"
+  },
+
+  "page13": {
+    "buttonCenter": "Réserves",
+    "button1": "Réserve centrale",
+    "button2": "Réserve 2",
+    "button3": "Réserve 3",
+    "button4": "Réserve 4"
+  },
+
+  "page14": {
+    "title": "Cockpits"
+  },
+
+  "page15": {
+
+  },
+
+  "page16": {
+    "buttonCenter": "Entrées",
+    "button1": "Entrée 1",
+    "button2": "Entrée 2",
+    "button3": "Entrée3",
+    "button4": "Entrée4"
+  },
+
+  "page181": {
+    "button1": "Caisse",
+    "button2": "Visualiser",
+    "button3": "Historique"
+  },
+
+  "addUser": {
+    "buttonCenter": "Ajouter utilisateur"
+  },
+
+  "page131": {
+    "buttonCenter": "Réserve centrale",
+    "button1": "Fournisseur",
+    "button2": "Transfert réserves",
+    "button3": "Transfert bars",
+    "button4": "Visualisation",
+    "button5": "Inventaire"
+  },
+
+  "page1315": {
+    "title": "Inventaire Réserve",
+    "product": "Produits",
+    "quant": "Quantité",
+    "dose": "Cl/Gr",
+    "casier": "Casiers",
+    "bouteilles": "Bouteilles",
+    "totalBout": "Total bouteilles"
+  },
+
+  "page1134":{
+    "coeficient": "Coéficient",
+    "consigne": "Consigne",
+    "reel": "Réel"
+  },
+
+  "page1812":{
+    "dosageCLGR": "Dosage en Cl/Gr",
+    "priceVenteTTC": "Prix de vente TTC",
+    "idealStock": "Stock idéal (bouteille)",
+    "initialStock": "Stock initial",
+    "stockMovement": "Mouvements de stock",
+    "boutPleines": "Bout pleines stock final précédent",
+    "doseRestante": "Doses restatnes bout entammée",
+    "entry": "Entrées",
+    "out": "Sorties"
+  },
+
+  "page161": {
+    "caisse": "Caisse",
+    "historic": "Historique"
+  }
+}

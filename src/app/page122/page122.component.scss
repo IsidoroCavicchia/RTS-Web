@@ -1,0 +1,298 @@
+.TitlePage {
+    position: fixed;
+    background: white;
+    color: #5A5A5A;
+    font-weight: bold;
+    border-radius: 30px;
+    left: 40%;
+    top: 5%;
+    width: 20%;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .container {
+    position: fixed;
+    top: 17%;
+    width: 100%;
+    height: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  
+  .d1{
+    position: absolute;
+    overflow-y: scroll;
+    z-index: 1;
+    margin: 10px;
+    width: 35%;
+    height: 100%;
+  }
+  
+  .d2{
+    position: absolute;
+    overflow-y: scroll;
+    margin: 10px;
+    width: 65%;
+    height: 100%;
+  }
+  
+  table {
+    margin: auto auto;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+  }
+  
+  
+  .tableBody {
+    background: #595959;
+    color: white;
+    padding: 15px;
+    border: 1px solid white;
+    text-align: center;
+  }
+  
+  .tableBody tr th {
+    border-right: 1px solid white;
+  }
+  
+  input {
+    background-color: transparent;
+  }
+  
+  .CategoryName {
+    background: #404040;
+    color: white;
+    padding: 15px;
+    border: 1px solid white;
+    text-align: center;
+    width: 425px;
+  }
+  
+  .ProductTable {
+    background: #404040;
+    color: white;
+    padding: 15px;
+    border: 1px solid white;
+    border-top: none;
+    text-align: center;
+  }
+  
+  
+  .QuantTable {
+    background: #404040;
+    color: white;
+    padding: 15px;
+    border: 1px solid white;
+    border-top: none;
+    text-align: center;
+  }
+  
+  td {
+    background: #5A5A5A;
+    color: white;
+    border: 1px solid white;
+  }
+
+  .YellowCaseTitle {
+    background: #FFC000;
+    border: 1px solid black;
+    text-align: center;
+    padding: 18px;
+    text-transform: uppercase;
+  }
+  
+  .YellowCaseTitleSecond {
+    background: #FFC000;
+    border: 1px solid black;
+    text-align: center;
+  }
+  
+  .YellowCaseTitleThrid {
+    background: #FFC000;
+    border: 1px solid black;
+    text-align: center;
+  }
+  
+  .RedCaseTitle {
+    background: #FF6463;
+    border: 1px solid black;
+    text-align: center;
+    padding: 41px;
+    text-transform: uppercase;
+  }
+  
+  .RedCaseTitleSecond {
+    background: #FF6463;
+    border: 1px solid black;
+    text-align: center;
+  }
+  
+  .RedCaseTitleThrid {
+    background: #FF6463;
+    border: 1px solid black;
+    text-align: center;
+  }
+  
+  .BlueCaseTitle {
+    background: #03CCF0;
+    border: 1px solid black;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  .BlueCaseTitleSecond {
+    background: #03CCF0;
+    border: 1px solid black;
+    text-align: center;
+  }
+
+  .BlueCaseTitleThrid {
+    background: #03CCF0;
+    border: 1px solid black;
+    text-align: center;
+  }
+  
+  .GreenCaseTitle {
+    background: #92D050;
+    border: 1px solid black;
+    text-align: center;
+    padding: 15px;
+    text-transform: uppercase;
+  }
+  
+  .GreenCaseTitleSecond {
+    background: #92D050;
+    border: 1px solid black;
+    text-align: center;
+  }
+  
+  .GreenCaseTitleThrid {
+    background: #92D050;
+    border: 1px solid black;
+    text-align: center;
+  }
+  
+  .BlackCaseTitle{
+    background: black;
+    border: 1px solid white;
+    color: white;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  .BlackCaseTitleSecond {
+    background:black;
+    border: 1px solid black;
+    text-align: center;
+    color: white;
+    padding: 15px;
+  }
+  
+  .tarifSelect{
+    position: fixed;
+    select{
+      border: none;
+      background: black;
+      color: #FF6463;
+      font-size: 15px;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 5px;
+    }
+  }
+  
+  
+  @media(max-width: 1281px) {
+  
+    .tarifSelect{
+      top: 120px;
+      left: 1000px
+    }
+  
+    .CategoryName {
+    }
+  
+    .ProductTable {
+      width: 242px;
+    }
+  
+    .QuantTable {
+      width: 58px;
+    }
+  
+    .RedCaseTitle {
+      text-align: center;
+    }
+  
+    .BlueCaseTitle {
+      text-align: center;
+    }
+  
+    .RedCaseTitleSecond {
+      width: 100px;
+      height: 48px;
+    }
+  
+    .BlueCaseTitleSecond {
+      width: 100px;
+      height: 48px;
+    }
+  
+    .RedCaseTitleSecond {
+      width: 100px;
+      height: 48px;
+    }
+
+    .YellowCaseTitleSecond {
+      width: 100px;
+      height: 48px;
+    }
+  
+    .GreenCaseTitleSecond {
+      width: 100px;
+      height: 48px;
+    }
+  
+    .TotalBout {
+      padding: 20px;
+      text-align: center;
+    }
+  
+    .RedCaseTitleThrid {
+      width: 100px;
+      text-align: center;
+      height: 23px;
+    }
+
+    .YellowCaseTitleThrid {
+      text-align: center;
+      height: 23px;
+    }
+
+    .BlueCaseTitleThrid {
+      text-align: center;
+      height: 23px;
+    }
+  
+    .GreenCaseTitleThrid {
+      text-align: center;
+      height: 23px;
+    }
+  
+    #Quant{
+      left: 273px;
+    }
+  
+    #Dose{
+      left: 364px;
+    }
+  
+    .d2{
+      left: 36%;
+      width: 62%;
+    }
+  
+  
+  }
+  

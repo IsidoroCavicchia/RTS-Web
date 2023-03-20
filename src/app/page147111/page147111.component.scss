@@ -1,0 +1,43 @@
+.container {
+    position: fixed;
+    top: 17%;
+    width: 100%;
+    height: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .center{
+        position: fixed;
+        top: 20%;
+        left: 20%;
+        width: 62.5%;
+  }
+
+  table{
+      border-collapse: collapse;
+      color: white;
+      text-align: right;
+
+      input{
+          text-align: center;
+          height: 25px;
+      }
+  }
+
+  table tr td{
+      padding: 15px;
+  }
+
+  .btnTotal{
+    background: #434443;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    border: solid white 3px;
+    width: 20%;
+    margin: auto auto;
+    text-align: center;
+    font-size: 14px;
+    padding: 20px;
+  }

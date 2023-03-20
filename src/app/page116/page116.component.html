@@ -1,0 +1,70 @@
+<div class="sidebar">
+  <div class="MenuButton" (click)="validate(result)">
+    <p>Valider</p>
+  </div>
+  <div class="TitlePage">
+    <p>{{ Title }}</p>
+  </div>
+  <div class="CancelButton" routerLink="/11">
+    <p>X</p>
+  </div>
+</div>
+<div class="container">
+  <div class="outer">
+    <div class="inner">
+      <table mdbTable class="main-table">
+        <thead>
+          <tr>
+            <th class="GeneralCase hard_left" scope="col">{{ label1 }}</th>
+            <th class="hard_left TarifCase" scope="col">Nom</th>
+            <th class="hard_left TarifCase" scope="col">Nom d'utilisateur</th>
+            <th class="hard_left TarifCase" scope="col">Code</th>
+            <th class="TarifCase VerticalCase" scope="col" style="font-size: 13px; padding: 10px 17px">Paramètres</th>
+            <th class="TarifCase VerticalCase" scope="col">Comptabilité</th>
+            <th class="TarifCase VerticalCase" scope="col">Stocks</th>
+            <th class="TarifCase VerticalCase" scope="col">Caisse Bar 1</th>
+            <th class="TarifCase VerticalCase" scope="col">Caisse Bar 2</th>
+            <th class="TarifCase VerticalCase" scope="col">Caisse Bar 3</th>
+            <th class="TarifCase VerticalCase" scope="col">Caisse Bar 4</th>
+            <th class="TarifCase VerticalCase" scope="col">Caisse Bar 5</th>
+            <th class="TarifCase VerticalCase" scope="col">Caisse Bar 6</th>
+            <th class="TarifCase VerticalCase" scope="col">Caisse Bar 7</th>
+            <th class="TarifCase VerticalCase" scope="col">Caisse Bar 8</th>
+            <th class="TarifCase VerticalCase" scope="col">Caisse Bar 9</th>
+            <th class="TarifCase VerticalCase" scope="col">Caisse Bar 10</th>
+          </tr>
+        </thead>
+        <br />
+        <tbody >
+          <tr mdbTableCol *ngFor="let user of users; let i = index; let first = first; let last = last;">
+            <th class="hard_left numCase" [class.first-item]="first" [class.last-item]="last">{{i}}</th>
+            <td class="hard_left">{{user.Name}}</td>
+            <td class="hard_left">{{user.Pseudo}}</td>
+            <td class="hard_left">0000000000000</td>
+            <td style="background-color: transparent;"><input type="radio" /></td>
+            <td style="background-color: transparent;"><input type="radio" /></td>
+            <td style="background-color: transparent;"><input type="radio" /></td>
+            <td style="background-color: transparent;"><input type="radio" /></td>
+            <td style="background-color: transparent;"><input type="radio" /></td>
+            <td style="background-color: transparent;"><input type="radio" /></td>
+            <td style="background-color: transparent;"><input type="radio" /></td>
+            <td style="background-color: transparent;"><input type="radio" /></td>
+            <td style="background-color: transparent;"><input type="radio" /></td>
+            <td style="background-color: transparent;"><input type="radio" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="footerTouch">
+    <div class="touchBoard2">
+      <div class="touch2" id="touch1"><fa-icon class="faButton" [icon]="faUserMinus"></fa-icon></div>
+    </div>
+    <div class="touchBoard2">
+      <div class="touch2" id="touch2"><fa-icon class="faButton" [icon]="faUserEdit"></fa-icon></div>
+    </div>
+    <div class="touchBoard2">
+      <div class="touch2" id="touch3" routerLink="/addUser"><fa-icon class="faButton" [icon]="faPlus"></fa-icon></div>
+    </div>
+  </div>
+</div>

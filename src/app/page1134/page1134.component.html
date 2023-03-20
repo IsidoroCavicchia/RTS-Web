@@ -1,0 +1,131 @@
+<div class="sidebar">
+    <div class="MenuButton" (click)="SaveProduct()">
+      <p>Valider</p>
+    </div>
+    <div class="TitlePage">
+      <p>{{ Title }}</p>
+    </div>
+    <div class="CancelButton" routerLink="/113">
+      <p>X</p>
+    </div>
+</div>
+<div class="container" >
+  <div class="d1" id="source">
+    <div class="tableCategory" *ngFor="let cat of ProductCategories">
+     <table>
+      <colgroup span="3"></colgroup>
+      <thead>
+        <tr>
+          <th id="ProductName" colspan="3" scope="colgroup">
+            <div class="CategoryName">
+              {{cat.ProductCategoryName}}
+            </div>
+          </th>
+        </tr>
+        <tr>
+          <th id="ProductName" scope="col">
+            <div class="ProductTable">
+              {{Product}}
+            </div>
+          </th>
+          <th id="Quant" class="headcol" scope="col">
+            <div class="QuantTable">
+              {{ Quant }}
+            </div>
+          </th>
+          <th id="Dose" class="headcol" scope="col">
+            <div class="QuantTable">
+              {{ Dose }}
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="tableBody" style="border:none">
+        <tr *ngFor="let prod of cat.Products; let i = index" style="border:none;">
+          <th style="background: #5A5A5A; color: white; border: 1px solid #5A5A5A; text-align: center;" class="productNameRow" contenteditable="true" (click)="openDialog('Product Name', ProductName)" (blur)="ValidProductName(prod, ProductName.innerText)" #ProductName>
+            {{prod.ProductName}}
+          </th>
+          <th style="background: #5A5A5A; color: white; border: 1px solid #5A5A5A; text-align: center;" contenteditable="true" (click)="openDialog('Product Quantity', ProductQte)" (blur)="ValidProductQte(prod, ProductQte.innerText)" #ProductQte>
+            {{prod.QteStock}}
+          </th>
+          <th style="background: #5A5A5A; color: white; border: 1px solid #5A5A5A; text-align: center;" contenteditable="true">
+            <div *ngIf='prod.ProductName != ""'>
+              {{prod.UniteTypeMsg ? 'Gr' : 'Cl'}}
+            </div>
+          </th>
+        </tr>
+      </tbody>
+     </table>
+    </div>
+  </div>
+  <div class="d2" id="target">
+    <div class="tableCategory" *ngFor="let cat of ProductCategories">
+      <table>
+        <colgroup span="3"></colgroup>
+          <thead>
+            <tr>
+              <th style="border: none;" colspan="2">
+                <div class="RedCaseTitle">
+                  {{ Coeficient }}
+                </div>
+              </th>
+              <th style="border: none;" colspan="4">
+                <div class="RedCaseTitle">
+                  All
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <th style="border: none;" colspan="1">
+                <div class="RedCaseTitleSecond">
+                  {{ Consigne }}
+                </div>
+              </th>
+              <th style="border: none;" colspan="1">
+                <div class="RedCaseTitleSecond">
+                  {{ Reel }}
+                </div>
+              </th>
+              <th *ngFor="let tarif of TarifBars" style="border: none;">
+                  <div class="RedCaseTitleSecond">
+                    {{tarif.TarifBarName}}
+                  </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="tableBody" style="border:none;">
+            <tr *ngFor="let prod of cat.Products; let i = index" style="border:none;">
+              <th style="border: none; background: gray; color: white; border: 1px solid gray; text-align: center;" >
+                <div *ngIf="prod.ProductName != ''">
+                  0
+                </div>
+              </th>
+              <th style="background: #92D050; color: black; border: 1px solid gray; text-align: center;">
+                {{prod.DosePerUnit}}
+              </th>
+              <th style="background: white; color: black; border: 1px solid gray; text-align: center;" contenteditable="true" (click)="openDialog('Tarif Compta', TarifCompta)" (blur)="ValidTarifCompta(prod, TarifCompta)" #TarifCompta>
+                <div *ngIf="prod.ProductName != ''">
+                  {{prod.TarifCompta | number: '1.2'}} €
+                </div>
+              </th>
+              <th style="background: white; color: black; border: 1px solid gray; text-align: center;" contenteditable="true" (click)="openDialog('Tarif 1', Tarif1)" (blur)="ValidTarif1(prod, Tarif1)" #Tarif1>
+                <div *ngIf="prod.ProductName != ''">
+                  {{prod.Tarif1 | number: '1.2'}} €
+                </div>
+              </th>
+              <th style="background: white; color: black; border: 1px solid gray; text-align: center;" contenteditable="true" (click)="openDialog('Tarif 2', Tarif2)" (blur)="ValidTarif2(prod, Tarif2)" #Tarif2>
+                <div *ngIf="prod.ProductName != ''">
+                  {{prod.Tarif2 | number: '1.2'}} €
+                </div>
+              </th>
+              <th style="background: white; color: black; border: 1px solid gray; text-align: center;" contenteditable="true" (click)="openDialog('Tarif VIP', TarifVIP)" (blur)="ValidTarifVIP(prod, TarifVIP)" #TarifVIP>
+                <div *ngIf="prod.ProductName != ''">
+                  {{prod.TarifVIP | number: '1.2'}} €
+                </div>
+              </th>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>

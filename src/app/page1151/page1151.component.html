@@ -1,0 +1,277 @@
+
+<div class="sidebar">
+  <div class="MenuButton" (click)="validate(result)">
+    <p>Valider</p>
+  </div>
+  <div class="TitlePage">
+    <p>{{ Title }}</p>
+  </div>
+  <div class="CancelButton" routerLink="/115">
+    <p>X</p>
+  </div>
+</div>
+<div class="container">  
+  <div class="d1" id="source">
+    <div class="tableCategory">
+      <table>
+        <thead>
+          <tr>
+            <th id="ProductName">
+              <div class="CategoryName">
+                Corélation
+              </div>
+            </th>
+          </tr>
+          
+        </thead>
+        <tbody class="tableBody" style="border:none">
+          <tr>
+            <th style="background: #5A5A5A; color: white; border: 2px solid #5A5A5A; text-align: center;" >
+              Réserve Centrale
+            </th>
+          </tr>
+          <tr>
+            <th style="background: #5A5A5A; color: white; border: 2px solid #5A5A5A; text-align: center;">
+              Réserve 2
+            </th>
+          </tr>
+          <tr>
+            <th style="background: #5A5A5A; color: white; border: 2px solid #5A5A5A; text-align: center;">
+              Réserve 3
+            </th>
+          </tr>
+          <tr>
+            <th style="background: #5A5A5A; color: white; border: 2px solid #5A5A5A; text-align: center;">
+              Réserve 4
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="d2" id="target">
+    <div class="tableCategory">
+      <table>
+          <thead>
+              <tr>
+                  <th style="border: none;" colspan="10">
+                      <div class="RedCaseTitleThrid">
+                          Bars
+                      </div>
+                  </th>
+                  <th style="border: none;" colspan="4">
+                      <div class="RedCaseTitleThrid">
+                          Réserves
+                      </div>
+                  </th>
+              </tr>
+              <tr>
+                  <th style="border: none;" *ngFor="let bar of bars; let i = index">
+                      <div class="RedCaseTitleSecond">
+                          Bar {{i + 1}}
+                      </div>
+                  </th>   
+                  <th style="border: none;">
+                      <div class="RedCaseTitleSecond">
+                          Réserve Centrale
+                      </div>
+                  </th>  
+                  <th style="border: none;">
+                      <div class="RedCaseTitleSecond">
+                          Réserve 2
+                      </div>
+                  </th> 
+                  <th style="border: none;">
+                      <div class="RedCaseTitleSecond">
+                          Réserve 3
+                      </div>
+                  </th> 
+                  <th style="border: none;">
+                      <div class="RedCaseTitleSecond">
+                          Réserve 4
+                      </div>
+                  </th>                
+              </tr>
+          </thead>
+          <tbody style="border:none;">
+              <tr>
+                  <th>
+                    <input type="checkbox"/>
+                  </th>
+                  <th>
+                    <input type="checkbox"/>
+                  </th>
+                  <th>
+                    <input type="checkbox"/>
+                  </th>
+                  <th>
+                    <input type="checkbox"/>
+                  </th>
+                  <th>
+                    <input type="checkbox"/>
+                  </th>
+                  <th>
+                    <input type="checkbox"/>
+                  </th>
+                  <th>
+                    <input type="checkbox"/>
+                  </th>
+                  <th>
+                    <input type="checkbox"/>
+                  </th>
+                  <th>
+                    <input type="checkbox"/>
+                  </th>
+                  <th>
+                    <input type="checkbox"/>
+                  </th>
+                  <th>
+                    <input type="checkbox"/>
+                  </th>
+                  <th>
+                    <input type="checkbox"/>
+                  </th>
+                  <th>
+                    <input type="checkbox"/>
+                  </th>
+                  <th>
+                    <input type="checkbox"/>
+                  </th>
+              </tr>
+              <tr>
+                <th>
+                  <input type="checkbox"/>
+                </th>
+                <th>
+                  <input type="checkbox"/>
+                </th>
+                <th>
+                  <input type="checkbox"/>
+                </th>
+                <th>
+                  <input type="checkbox"/>
+                </th>
+                <th>
+                  <input type="checkbox"/>
+                </th>
+                <th>
+                  <input type="checkbox"/>
+                </th>
+                <th>
+                  <input type="checkbox"/>
+                </th>
+                <th>
+                  <input type="checkbox"/>
+                </th>
+                <th>
+                  <input type="checkbox"/>
+                </th>
+                <th>
+                  <input type="checkbox"/>
+                </th>
+                <th>
+                  <input type="checkbox"/>
+                </th>
+                <th>
+                  <input type="checkbox"/>
+                </th>
+                <th>
+                  <input type="checkbox"/>
+                </th>
+                <th>
+                  <input type="checkbox"/>
+                </th>
+            </tr>
+            <tr>
+              <th>
+                <input type="checkbox"/>
+              </th>
+              <th>
+                <input type="checkbox"/>
+              </th>
+              <th>
+                <input type="checkbox"/>
+              </th>
+              <th>
+                <input type="checkbox"/>
+              </th>
+              <th>
+                <input type="checkbox"/>
+              </th>
+              <th>
+                <input type="checkbox"/>
+              </th>
+              <th>
+                <input type="checkbox"/>
+              </th>
+              <th>
+                <input type="checkbox"/>
+              </th>
+              <th>
+                <input type="checkbox"/>
+              </th>
+              <th>
+                <input type="checkbox"/>
+              </th>
+              <th>
+                <input type="checkbox"/>
+              </th>
+              <th>
+                <input type="checkbox"/>
+              </th>
+              <th>
+                <input type="checkbox"/>
+              </th>
+              <th>
+                <input type="checkbox"/>
+              </th>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox"/>
+            </th>
+            <th>
+              <input type="checkbox"/>
+            </th>
+            <th>
+              <input type="checkbox"/>
+            </th>
+            <th>
+              <input type="checkbox"/>
+            </th>
+            <th>
+              <input type="checkbox"/>
+            </th>
+            <th>
+              <input type="checkbox"/>
+            </th>
+            <th>
+              <input type="checkbox"/>
+            </th>
+            <th>
+              <input type="checkbox"/>
+            </th>
+            <th>
+              <input type="checkbox"/>
+            </th>
+            <th>
+              <input type="checkbox"/>
+            </th>
+            <th>
+              <input type="checkbox"/>
+            </th>
+            <th>
+              <input type="checkbox"/>
+            </th>
+            <th>
+              <input type="checkbox"/>
+            </th>
+            <th>
+              <input type="checkbox"/>
+            </th>
+        </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>

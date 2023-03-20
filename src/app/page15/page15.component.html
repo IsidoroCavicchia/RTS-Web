@@ -1,0 +1,79 @@
+<div class="sidebar">
+  <div class="MenuButton" routerLink="/Menu">
+    <p>Menu</p>
+  </div>
+  <div class="CancelButton" routerLink="/14">
+    <p>Cockpit</p>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="btnSecu" 
+      style="width: 150px; border: solid 2px #D2A3FF; border-radius: 35px 0 0 35px; color: #D2A3FF;">
+        <label>Bar</label>
+    </div>
+    <div class="btnSecu" *ngFor="let bar of Bars">
+      <label>{{bar.BarId}}</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="btnSecu" 
+      style="width: 150px; border: solid 2px #00B0F0; border-radius: 35px 0 0 35px; color: #00B0F0;">
+        <label>Entrées</label>
+    </div>
+    <div class="btnSecu">
+      <label>1</label>
+    </div>
+    <div class="btnSecu">
+      <label>2</label>
+    </div>
+    <div class="btnSecu">
+      <label>3</label>
+    </div>
+    <div class="btnSecu">
+      <label>4</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="btnSecu" 
+      style="width: 150px; border: solid 2px #92D050; border-radius: 35px 0 0 35px; color: #92D050;">
+        <label>Vestiaires</label>
+    </div>
+    <div class="btnSecu">
+      <label>1</label>
+    </div>
+    <div class="btnSecu">
+      <label>2</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="btnSecu" 
+      style="width: 150px; border: solid 2px #FFC000; border-radius: 35px 0 0 35px; color: #FFC000;">
+        <label>Toilettes</label>
+    </div>
+    <div class="btnSecu">
+      <label>1</label>
+    </div>
+    <div class="btnSecu">
+      <label>2</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="btnSecu" 
+      style="width: 150px; border: solid 2px #FF6463; border-radius: 35px 0 0 35px; color: #FF6463;">
+        <label>Réserves</label>
+    </div>
+    <div class="btnSecu">
+      <label>RC</label>
+    </div>
+    <div class="btnSecu">
+      <label>2</label>
+    </div>
+    <div class="btnSecu">
+      <label>3</label>
+    </div>
+    <div class="btnSecu">
+      <label>4</label>
+    </div>
+  </div>
+</div>

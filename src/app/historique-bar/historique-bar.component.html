@@ -1,0 +1,33 @@
+<div class="sidebar">
+  <div class="MenuButton" (click)="ValidBar()">
+    <p>RTS</p>
+  </div>
+  <div class="TitlePage">
+    <p>Historique vente bar {{BarId}}</p>
+  </div>
+  <div class="CancelButton" routerLink="/181/{{BarId}}">
+    <p>X</p>
+  </div>
+</div>
+<div class="container">
+  <div class="tableOrder">
+    <table class="table">
+      <tbody>
+        <tr *ngFor="let order of orders; let i = index" style="text-align: start;">
+          <td>{{i + 1}}</td>
+          <td>{{order.Order.OrderDate | date: 'dd-MM-yyyy HH:mm'}}</td>
+          <td>
+            <div *ngFor="let item of order.ProductsOrder">{{item.ProductQte}} {{item.Product.ProductName ? item.Product.ProductName : 'undefined'}}</div>
+          </td>
+          <td>
+            <div *ngFor="let item of order.ProductsOrder">{{item.Product.Price * item.ProductQte | currency: 'EUR':'symbol':'0.2-2':'fr'}}</div>
+          </td>
+          <td style="text-align: end;">{{order.Order.TotalPrice | currency: 'EUR':'symbol':'0.2-2':'fr'}}</td>
+          <td>
+            {{order.Order.User.Pseudo}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="sidebar">
+  <div class="MenuButton" (click)="validate(result)">
+    <p>Valider</p>
+  </div>
+  <div class="TitlePage">
+    <p>Paramètre de caisse</p>
+  </div>
+  <div class="CancelButton" routerLink="/11">
+    <p>X</p>
+  </div>
+</div>
+<div class="container">
+  <table mdbTable>
+    <thead>
+      <tr>
+        <th class="GeneralCase">Général</th>
+        <th class="InformationCase">Informations</th>
+        <th class="TarifCase">Tarif 1</th>
+        <th class="TarifCase">Tarif 2</th>
+        <th class="TarifCase">Tarif 3</th>
+        <th class="TarifCase">Tarif 4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mbdTableCol *ngFor="let el of result">
+        <th scope="row" class="TypeCase">{{ el.Type }}</th>
+        <td (blur)="infoBlur(Info.innerText, el.TarifCaisseId)" contenteditable="true" (click)="openDialog('Information', Info)" #Info>{{ el.Information }}</td>
+        <td (focus)="videText(Tarif1.innerText)" (blur)="tarifBlur(Tarif1.innerText, el.TarifCaisseId, 1)" contenteditable="true" (click)="openDialog('Tarif 1', Tarif1)" #Tarif1>{{ el.Tarif1 | currency: 'EUR' : true }}</td>
+        <td (blur)="tarifBlur(Tarif2.innerText, el.TarifCaisseId, 2)" contenteditable="true" (click)="openDialog('Tarif 2', Tarif2)" #Tarif2>{{ el.Tarif2 | currency: 'EUR' : true }}</td>
+        <td (blur)="tarifBlur(Tarif3.innerText, el.TarifCaisseId, 3)" contenteditable="true" (click)="openDialog('Tarif 3', Tarif3)" #Tarif3>{{ el.Tarif3 | currency: 'EUR' : true }}</td>
+        <td (blur)="tarifBlur(Tarif4.innerText, el.TarifCaisseId, 4)" contenteditable="true" (click)="openDialog('Tarif 4', Tarif4)" #Tarif4>{{ el.Tarif4 | currency: 'EUR' : true }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+  <br/>
+  <table mdbTable>
+    <thead>
+      <tr>
+        <th class="GeneralCase">Caisse</th>
+        <th class="TarifCase">Tarif</th>
+        <th class="TarifCase">Personnel</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mbdTableCol *ngFor="let ca of caisse; let i = index">
+        <th scope="row" class="TypeCase">{{ ca.CaisseName }}</th>
+        <th><select (change)="SelectedTarif(i, $event.target.value)"><option *ngFor="let cai of caisses" [value]="cai">{{ cai }}</option></select></th>
+        <th><select (change)="SelectedUser(i, $event.target.value)"><option *ngFor="let user of users" [value]="user.UserId">{{ user.Pseudo }}</option></select></th>
+      </tr>
+    </tbody>
+  </table>
+</div>

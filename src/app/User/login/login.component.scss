@@ -1,0 +1,157 @@
+ body{
+   background: red;
+ }
+
+ @media(max-width: 1366px){
+  .Username {
+    position: fixed;
+    margin-top: 23.5%;
+    margin-left: -8%;
+
+    label {
+      color: white;
+      font-size: 22px;
+    }
+
+    input {
+      margin-left: 20px;
+      border-radius: 30px;
+      height: 35px;
+      border: solid 1px #5A5A5A;
+      color: #5A5A5A;
+      font-size: 15px;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+
+  .Password {
+    position: fixed;
+    margin-top: 23.5%;
+    margin-left: 58%;
+
+    input {
+      border-radius: 12%;
+      height: 35px;
+      border: solid 1px #5A5A5A;
+      color: #5A5A5A;
+      font-size: 15px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    label {
+      margin-left: 20px;
+      color: white;
+      font-size: 22px;
+    }
+  }
+}
+
+@media(max-width: 1281px){
+  body{
+    background: red;
+  }
+
+  .Username {
+    position: fixed;
+    margin-top: 22%;
+    margin-left: -11%;
+
+    label {
+      color: white;
+      font-size: 22px;
+    }
+
+    input {
+      margin-left: 20px;
+      border-radius: 12%;
+      height: 35px;
+      border: solid 1px #5A5A5A;
+      color: #5A5A5A;
+      font-size: 15px;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+
+  .Password {
+    position: fixed;
+    margin-top: 22%;
+    margin-left: 55%;
+
+    input {
+      border-radius: 12%;
+      height: 35px;
+      border: solid 1px #5A5A5A;
+      color: #5A5A5A;
+      font-size: 15px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    label {
+      margin-left: 20px;
+      color: white;
+      font-size: 22px;
+    }
+  }
+}
+
+.CenterButton {
+  width: 236px;
+  height: 239px;
+  margin-left: 25.6%;
+  margin-top: 14%;
+  font-size: 43px;
+  color: white;
+}
+
+@media(max-width: 1024px){
+  .Username {
+    position: fixed;
+    margin-top: 25%;
+    margin-left: -8%;
+
+    label {
+      color: white;
+      font-size: 20px;
+    }
+
+    input {
+      margin-left: 20px;
+      border-radius: 12%;
+      height: 35px;
+      width: 150px;
+      border: solid 1px #5A5A5A;
+      color: #5A5A5A;
+      font-size: 15px;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+
+  .Password {
+    position: fixed;
+    margin-top: 25%;
+    margin-left: 62%;
+
+    input {
+      border-radius: 12%;
+      height: 35px;
+      width: 150px;
+      border: solid 1px #5A5A5A;
+      color: #5A5A5A;
+      font-size: 15px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    label {
+      margin-left: 20px;
+      color: white;
+      font-size: 20px;
+    }
+  }
+
+}

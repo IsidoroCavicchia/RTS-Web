@@ -1,0 +1,258 @@
+<div class="sidebar">
+    <div class="MenuButton" (click)="validViewModel()">
+      <p>Valider</p>
+    </div>
+    <div class="TitlePage">
+      <p>Création</p>
+    </div>
+    <div class="CancelButton" routerLink="/113">
+      <p>X</p>
+    </div>
+</div>
+<div class="container">
+  <div class="tableCategory">
+    <table>
+      <thead>
+        <tr>
+          <th id="ProductName" rowspan="2">
+            <div class="CategoryName">
+              Catégories de produits
+            </div>
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border: none;" colspan="2">
+            <div class="RedCaseTitleSecond">
+              TVA
+            </div>
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border: none;" rowspan="2">
+            <div class="RedCaseTitle">
+              Coeficient
+            </div>
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border: none;" rowspan="2">
+            <div class="RedCaseTitle">
+              Dosage en Cl
+            </div>
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border: none;" rowspan="2">
+            <div class="RedCaseTitle">
+              Réappro auto
+            </div>
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border: none;" rowspan="2">
+            <div class="RedCaseTitle">
+              Stock alarme
+            </div>
+          </th>
+        </tr>
+        <tr>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border: none;" colspan="1">
+            <div class="RedCaseTitleThrid">
+              Achat
+            </div>
+          </th>
+          <th style="border: none;" colspan="1">
+            <div class="RedCaseTitleThrid">
+              Vente
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="tableBody" style="border:none;">
+        <tr *ngFor="let cat of ViewModel.Category; let i = index" style="border:3px solid gray;">
+          <th contenteditable="true" (click)="openDialogUpdateCategory('Modifié catégorie', ProductName, cat, 'name')" #ProductName>
+            {{cat.ProductCategoryName}}
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border:3px solid gray;" (click)="openDialogUpdateCategory('Modifié catégorie', VAT, cat, 'vat')" #VAT>
+            {{cat.VAT }} %
+          </th>
+          <th style="border:3px solid gray;" (click)="openDialogUpdateCategory('Modifié catégorie', VATVente, cat, 'vatVente')" #VATVente>
+            {{cat.VATVente }} %
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border:3px solid gray;" (click)="openDialogUpdateCategory('Modifié catégorie', Coeficient, cat, 'coeficient')" #Coeficient>
+            {{cat.CoeficientRate }}
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border:3px solid gray;" (click)="openDialogUpdateCategory('Modifié catégorie', Dosage, cat, 'dosage')" #Dosage>
+            {{ cat.DosageCl }}
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border:3px solid gray;">
+            <select>
+              <option *ngFor="let rate of ReaproAutoRate">{{rate}} %</option>
+            </select>
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border:3px solid gray;">
+            <select>
+              <option *ngFor="let rate of StockAlarmRate">{{rate}} %</option>
+            </select>
+          </th>
+        </tr>
+        <tr>
+          <th style="border:3px solid gray;" contenteditable="true" (click)="openDialogNewCategory('Nouvelle catégorie', NewProductName)" #NewProductName> </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tableBars">
+    <table>
+      <thead>
+        <tr>
+          <th id="ProductName" rowspan="2">
+            <div class="CategoryName">
+              Bars
+            </div>
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border: none;" rowspan="2">
+            <div class="RedCaseTitle">
+              Tarifs
+            </div>
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border: none;" rowspan="2">
+            <div class="RedCaseTitle">
+              Seuil de rentabilité
+            </div>
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border: none;" rowspan="2">
+            <div class="RedCaseTitle">
+              Personnel
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="tableBody" style="border:none;">
+        <tr *ngFor="let bar of ViewModel.Bars; let i = index" style="border:3px solid gray;">
+          <th>
+            {{bar.BarName}}
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border:3px solid gray;">
+            <select [(ngModel)]="bar.TarifId">
+              <option value="0">Compta</option>
+              <option value="1">Tarif 1</option>
+              <option value="2">Tarif 2</option>
+              <option value="3">VIP</option>
+            </select>
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border:3px solid gray;" (click)="openDialogUpdateBar('Modifié catégorie', RentaSeuil, bar, 'renta')" #RentaSeuil>
+            {{bar.RentaSeuil | number: '1.2' }} €
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border:3px solid gray;">
+            <select [(ngModel)]="bar.UserId" (change)="bar.IsModified = true">
+              <option [(ngValue)]="user.UserId" *ngFor="let user of ViewModel.Users" style="border:3px solid gray;">
+                {{user.Name}}
+              </option>
+            </select>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tableReservs">
+    <table>
+      <thead>
+        <tr>
+          <th id="ProductName" rowspan="2">
+            <div class="CategoryName">
+              Réserves
+            </div>
+          </th>
+          <th width="320px" style="visibility: hidden;"></th>
+          <th style="border: none;" rowspan="2">
+            <div class="RedCaseTitle">
+              Personnel
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="tableBody" style="border:none;">
+        <tr *ngFor="let reserv of ViewModel.Reservs; let i = index" style="border:3px solid gray;">
+          <th>
+            {{reserv.ReservName}}
+          </th>
+          <th width="320px" style="visibility: hidden;"></th>         
+          <th style="border:3px solid gray;">
+            <select [(ngModel)]="reserv.UserId" (change)="reserv.IsModified = true">
+              <option [(ngValue)]="user.UserId" *ngFor="let user of ViewModel.Users" style="border:3px solid gray;">
+                {{user.Name}}
+              </option>
+            </select>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tableServeur">
+    <table>
+      <thead>
+        <tr>
+          <th id="ProductName" rowspan="2">
+            <div class="CategoryName">
+              Serveurs
+            </div>
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border: none;" rowspan="2">
+            <div class="RedCaseTitle">
+              Tarifs
+            </div>
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border: none;" rowspan="2">
+            <div class="RedCaseTitle">
+              Seuil de rentabilité
+            </div>
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border: none;" rowspan="2">
+            <div class="RedCaseTitle">
+              Personnel
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="tableBody" style="border:none;">
+        <tr *ngFor="let serveur of ViewModel.Serveurs; let i = index" style="border:3px solid gray;">
+          <th>
+            {{serveur.ServerName}}
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border:3px solid gray;">
+            <select [(ngModel)]="serveur.TarifId" (change)="serveur.IsModified = true">
+              <option value="0">Compta</option>
+              <option value="1">Tarif 1</option>
+              <option value="2">Tarif 2</option>
+              <option value="3">VIP</option>
+            </select>
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border:3px solid gray;" (click)="openDialogUpdateBar('Modifié seuil de rentabilité', RentaSeuil, serveur, 'renta')" #RentaSeuil>
+            {{serveur.RentaSeuil | number: '1.2' }} €
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>         
+          <th style="border:3px solid gray;">
+            <select [(ngModel)]="serveur.UserId" (change)="serveur.IsModified = true">
+              <option [(ngValue)]="user.UserId" *ngFor="let user of ViewModel.Users" style="border:3px solid gray;">
+                {{user.Name}}
+              </option>
+            </select>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

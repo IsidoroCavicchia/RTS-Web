@@ -1,0 +1,164 @@
+<div class="sidebar">
+    <div class="MenuButton">
+      <p>Valider</p>
+    </div>
+    <div class="TitlePage">
+      <p>Répartition</p>
+    </div>
+    <div class="CancelButton" routerLink="/113">
+      <p>X</p>
+    </div>
+  </div>
+  <div class="container" style="overflow-y: auto;">    
+    <div class="d1" id="source">
+      <div class="tableCategory" *ngFor="let cat of viewModel.Category">
+        <table>
+          <thead>
+            <tr>
+              <th id="ProductName" colspan="3" scope="colgroup">
+                <div class="CategoryName">
+                  {{cat.ProductCategoryName}}
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <th id="ProductName" scope="col">
+                <div class="ProductTable">
+                  Produit
+                </div>
+              </th>
+              <th id="Quant" class="headcol" scope="col">
+                <div class="QuantTable">
+                  Quantité
+                </div>
+              </th>
+              <th id="Dose" class="headcol" scope="col">
+                <div class="QuantTable">
+                  Cl/Gr
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="tableBody" style="border:none">
+            <tr *ngFor="let prod of cat.Product; let i = index" style="border:none;">
+              <th style="background: #5A5A5A; color: white; border: 1px solid #5A5A5A; text-align: center;" class="productNameRow" contenteditable="true" >
+                {{prod.ProductName}}
+              </th>
+              <th style="background: #5A5A5A; color: white; border: 1px solid #5A5A5A; text-align: center;" contenteditable="true">
+                {{prod.QteStock}}
+              </th>
+              <th style="background: #5A5A5A; color: white; border: 1px solid #5A5A5A; text-align: center;" contenteditable="true">
+                <div *ngIf='prod.ProductName != ""'>
+                  {{prod.UniteTypeMsg ? 'Gr' : 'Cl'}}
+                </div>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="d2" id="target">
+        <div class="tableCategory" *ngFor="let cat of viewModel.Category">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="border: none;" rowspan="2">
+                            <div class="RedCaseTitle">
+                                TOUT
+                            </div>
+                        </th>
+                        <th width="25px" style="visibility: hidden;"></th>
+                        <th style="border: none;" colspan="10">
+                            <div class="RedCaseTitleThrid">
+                                Bars
+                            </div>
+                        </th>
+                        <th style="border: none;" colspan="5">
+                            <div class="RedCaseTitleThrid">
+                                Serveurs
+                            </div>
+                        </th>
+                        <th style="border: none;" colspan="4">
+                            <div class="RedCaseTitleThrid">
+                                Réserves
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th width="25px" style="visibility: hidden;"></th>
+                        <th style="border: none;" *ngFor="let bar of bars; let i = index">
+                            <div class="RedCaseTitleSecond">
+                                Bar {{i + 1}}
+                            </div>
+                        </th>   
+                        <th style="border: none;">
+                            <div class="RedCaseTitleSecond">
+                                Serveur 1
+                            </div>
+                        </th>   
+                        <th style="border: none;">
+                            <div class="RedCaseTitleSecond">
+                                Serveur 2
+                            </div>
+                        </th> 
+                        <th style="border: none;">
+                            <div class="RedCaseTitleSecond">
+                                Serveur 3
+                            </div>
+                        </th> 
+                        <th style="border: none;">
+                            <div class="RedCaseTitleSecond">
+                                Serveur 4
+                            </div>
+                        </th> 
+                        <th style="border: none;">
+                            <div class="RedCaseTitleSecond">
+                                Serveur 5
+                            </div>
+                        </th>   
+                        <th style="border: none;">
+                            <div class="RedCaseTitleSecond">
+                                Réserve Centrale
+                            </div>
+                        </th>  
+                        <th style="border: none;">
+                            <div class="RedCaseTitleSecond">
+                                Réserve 2
+                            </div>
+                        </th> 
+                        <th style="border: none;">
+                            <div class="RedCaseTitleSecond">
+                                Réserve 3
+                            </div>
+                        </th> 
+                        <th style="border: none;">
+                            <div class="RedCaseTitleSecond">
+                                Réserve 4
+                            </div>
+                        </th>                
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let prod of cat.Product">
+                        <th>
+                            <input type="checkbox"/>
+                        </th>
+                        <th width="25px" style="visibility: hidden;"></th>
+                        <th *ngFor="let bar of bars">
+                            <input type="checkbox"/>
+                        </th>
+                        <th><input type="checkbox"/></th>
+                        <th><input type="checkbox"/></th>
+                        <th><input type="checkbox"/></th>
+                        <th><input type="checkbox"/></th>
+                        <th><input type="checkbox"/></th>
+                        <th><input type="checkbox"/></th>
+                        <th><input type="checkbox"/></th>
+                        <th><input type="checkbox"/></th>
+                        <th><input type="checkbox"/></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div>

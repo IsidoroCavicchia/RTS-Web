@@ -1,0 +1,145 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face{
+  font-family: 'dkpisang';
+  src: url('dkpisang.otf') format('truetype');
+}
+
+body {
+  background-color: gray;
+  font-family: dkpisang;
+}
+
+.SelectRoue {
+  position: fixed;
+  /*top: 50%;
+  left: 50%;*/
+  /*margin-top: auto;
+  margin-left: auto;*/
+  width: 70%;
+  height: 70%;
+  background-image: url('Background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: dkpisang;
+}
+
+.logo{
+    width: 145px;
+    margin-top: 15px
+}
+
+.sidebar{
+  position: fixed;
+  width: 100%;
+  display: inline-block;
+  color: white;
+}
+
+.MenuButton {
+  float: left;
+  background: #434443;
+  padding: 25px;
+  border-radius: 0% 45% 45% 0%;
+  width: 5%;
+  border: solid 3px white;
+}
+
+.CancelButton {
+  float: right;
+  background: #434443;
+  padding: 25px;
+  border-radius: 45% 0% 0% 45%;
+  width: 5%;
+  border: solid 3px white;
+}
+
+.CenterButton {
+  border-radius: 50%;
+  background: #434443;
+  text-decoration: none;
+  border: none;
+  position: fixed;
+  font-family: dkpisang;
+}
+
+@media(min-width: 1024px)
+{
+  .SelectRoue {
+    margin-top: 13%;
+    margin-left: 8.5%;
+  }
+
+  .sidebar {
+    font-size: 22px;
+  }
+
+  .CenterButton {
+    width: 214px;
+    height: 214px;
+    margin-left: 28.4%;
+    margin-top: 16.1%;
+    font-size: 43px;
+    color: white;
+  }
+}
+
+@media(min-width: 1280px)
+{
+  .SelectRoue{
+    margin-top: 8%;
+    margin-left: 14%;
+  }
+
+  .sidebar {
+    font-size: 22px;
+  }
+
+  .CenterButton {
+    width: 239px;
+    height: 239px;
+    margin-left: 25.2%;
+    margin-top: 14.2%;
+    font-size: 43px;
+    color: white;
+  }
+}
+
+@media(min-width: 1365px)
+{
+  .SelectRoue{
+    margin-top: 16%;
+    margin-left: 11.5%;
+  }
+
+  .sidebar{
+    font-size: 22px;
+  }
+
+  .CenterButton{
+    width: 270px;
+    height: 270px;
+    margin-left: 26.5%;
+    margin-top: 15%;
+    font-size: 43px;
+    color: white;
+  }
+
+  .faButton{
+    font-size: 50px;
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.TitlePage {
+  position: fixed;
+  background: white;
+  color: #5A5A5A;
+  font-weight: bold;
+  border-radius: 30px;
+  left: 40%;
+  top: 5%;
+  width: 20%;
+  text-align: center;
+  font-size: 14px;
+}

@@ -1,0 +1,105 @@
+<div class="sidebar">
+  <div class="MenuButton" (click)="ValidBar()">
+    <p>Bar {{BarId}}</p>
+  </div>
+  <div class="TitlePage">
+    <p>{{ Title }} €</p>
+  </div>
+  <div class="touchGestionPannel">
+    <div style="margin-right: 15px; display: inline-block;">
+      <div class="touch2" style="border: 1px solid #FF6463; color: #FF6463;" [routerLink]="['/incendie', BarId]">Incendie</div>
+    </div>
+    <div style="margin-right: 15px; display: inline-block;">
+      <div class="touch2" style="border: 1px solid #D2A3FF; color: #D2A3FF;" [routerLink]="['/securite', BarId]">Sécurité</div>
+    </div>
+    <div style="margin-right: 15px; display: inline-block;">
+      <div class="touch2" style="border: 1px solid #92D050; color: #92D050;">Réapro</div>
+    </div>
+    <div style="margin-right: 15px; display: inline-block;">
+      <div class="touch2" style="border: 1px solid #FCBE00; color: #FCBE00;">Inventaire</div>
+    </div>
+  </div>
+  <div class="CancelButton" routerLink="/181/{{BarId}}">
+    <p>X</p>
+  </div>
+</div>
+<div class="container">
+  <div class="pannel1">
+    <div class="pannel1Content">
+      <div *ngFor="let cat of ProductCategory" class="btnCaisse" [ngStyle]="{'background-color': cat.Color}" (click)="SelectCategory(cat.ProductCategoryId)">{{cat.ProductCategoryName}}</div>
+
+    </div>
+
+  </div>
+  <div class="pannel2">
+    <div class="pannel2Content">
+      <div class="ScreenOrder" id="totalResum">
+        <!--<label *ngFor="let com of Command" class="labelCommand">{{com.quantite}}    {{com.Product.ProductName}}      {{com.Product.Price}}€<br /></label>-->
+        <table style="margin: 5px; border-collapse: collapse;">
+          <tbody>
+            <tr *ngFor="let com of Command; let i = index;" class="labelCommand" (click)="selectItem(com)" [ngClass]="{'highlight' : com.Product.ProductName == selectedName}" style="margin: 5px; padding: 2px; margin-bottom: 15px;">
+              <td>{{com.quantite}}</td>
+              <td>{{com.Product.ProductName}}</td>
+              <td style="padding-left: 15px;">{{com.Product.Price | currency: 'EUR':'symbol':'0.2-2':'fr'}}</td>
+              <td style="padding-left: 15px;">{{com.Product.Price * com.quantite | currency: 'EUR':'symbol':'0.2-2':'fr'}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="touchPannel2">
+        <div class="touchBoard1">
+          <div class="touch" (click)="AddQte(7)">7</div>
+          <div class="touch" (click)="AddQte(8)">8</div>
+          <div class="touch" (click)="AddQte(9)">9</div>
+        </div>
+        <div class="touchBoard1">
+          <div class="touch" (click)="AddQte(4)">4</div>
+          <div class="touch" (click)="AddQte(5)">5</div>
+          <div class="touch" (click)="AddQte(6)">6</div>
+        </div>
+        <div class="touchBoard1">
+          <div class="touch" (click)="AddQte(1)">1</div>
+          <div class="touch" (click)="AddQte(2)">2</div>
+          <div class="touch" (click)="AddQte(3)">3</div>
+        </div>
+        <div class="touchBoard1">
+          <div class="touch" (click)="DeleteCommand()">C</div>
+          <div class="touch">0</div>
+          <div class="touch">.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pannel3">
+    <div class="pannel3Content">
+      <div *ngFor="let cat of Products" class="btnCaisseProduct" [ngStyle]="{'background-color': cat.Color}" (click)="AddProductToTotal(cat.ProductId)">{{cat.ProductName}}</div>
+
+    </div>
+  </div>
+  <div class="pannel4">
+    <div class="pannel4Content">
+      <div class="touchBoard2">
+        <div class="touch2">Plan salle</div>
+      </div>
+      <div class="touchBoard2">
+        <div class="touch2">Table</div>
+      </div>
+      <div class="touchBoard2">
+        <div class="touch2">Offert</div>
+      </div>
+      <div class="touchBoard2">
+        <div class="touch2">Caisse</div>
+      </div>
+      <div class="touchTotalBoard">
+        <div class="touchTotal" (click)="ValidOrder()">Total</div>
+      </div>
+    </div>
+  </div>
+  <div class="pannel5">
+    <div class="today">{{Today | date:'dd-MM-yy'}}</div>
+    <div class="hour">{{Today | date:'HH:mm:ss'}}</div>
+    <div class="user">{{user.Pseudo}}</div>
+    <div class="tarif">Tarif 1</div>
+    <div class="status">Ouvert</div>
+  </div>
+</div>

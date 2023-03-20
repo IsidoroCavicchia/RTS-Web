@@ -1,0 +1,80 @@
+<div class="sidebar">
+    <div class="MenuButton" (click)="validViewModel()">
+      <p>Valider</p>
+    </div>
+    <div class="TitlePage">
+      <p>Fiche Technique</p>
+    </div>
+    <div class="CancelButton" routerLink="/113">
+      <p>X</p>
+    </div>
+</div>
+<div class="container">
+    <div class="tableCategory" *ngFor="let category of viewModel.Category">
+        <table>
+      <thead>
+        <tr>
+          <th id="ProductName">
+            <div class="CategoryName">
+                {{category.ProductCategoryName}}
+            </div>
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border: none;">
+            <div class="RedCaseTitle">
+              Nombre d'unités
+            </div>
+          </th>
+          <th style="border: none;">
+            <div class="RedCaseTitle">
+              Doses par unité
+            </div>
+          </th>
+          <th style="border: none;">
+            <div class="RedCaseTitle">
+              Prix d'achat HTVA
+            </div>
+          </th>  
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border: none;">
+            <div class="RedCaseTitle">
+              Bouteille pleine (gr)
+            </div>
+          </th>
+          <th style="border: none;">
+            <div class="RedCaseTitle">
+              Bouteille vide (gr)
+            </div>
+          </th>        
+      </thead>
+      <tbody class="tableBody" style="border:none;">
+        <tr style="border:3px solid gray;" *ngFor="let product of category.Product">
+          <th contenteditable="true"  #ProductName>
+          {{product.ProductName}}
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border:3px solid gray;"  #VAT>
+            {{product.NbrUnit}}
+          </th>
+          <th style="border:3px solid gray;"  #VATVente>
+            {{product.DosePerUnit}}
+          </th>
+          <th style="border:3px solid gray;"  #Coeficient>
+            {{product.PriceAchat}}
+          </th>
+          <th width="25px" style="visibility: hidden;"></th>
+          <th style="border:3px solid gray;"  #Dosage>
+          <div *ngIf="product.BottleFullWeight > 0">
+            {{product.BottleFullWeight}}
+            </div>
+          </th>
+          <th style="border:3px solid gray;">
+            <div *ngIf="product.BottleEmptyWeight > 0">
+            {{product.BottleEmptyWeight}}
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+</div>

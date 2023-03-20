@@ -1,0 +1,231 @@
+.menuLabel {
+  color: white;
+}
+
+.menuButton {
+  border-radius: 50%;
+  border: solid 2px white;
+  background: #5A5A5A;
+  color: white;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+@media(max-width: 1366px) {
+  .menuLabel {
+    font-size: 22px;
+  }
+
+  .menuButton {
+    width: 100px;
+    height: 100px;
+  }
+
+  #Button1 {
+    position: fixed;
+    left: 26%;
+  }
+
+  #Button2 {
+    position: fixed;
+    left: 18%;
+    top: 35%;
+  }
+
+  #Button3 {
+    position: fixed;
+    left: 9%;
+    top: 52.5%;
+  }
+
+  #Button4 {
+    position: fixed;
+    left: 17%;
+    top: 70%;
+  }
+
+  #Button5 {
+    position: fixed;
+    left: 27%;
+    top: 83.5%;
+  }
+
+  #Button6 {
+    position: fixed;
+    left: 59%;
+  }
+
+  #Button7 {
+    position: fixed;
+    left: 70%;
+    top: 35%;
+  }
+
+  #Button8 {
+    position: fixed;
+    left: 73.5%;
+    top: 52.5%;
+  }
+
+  #Button9 {
+    position: fixed;
+    left: 70%;
+    top: 70%;
+  }
+
+  #Button10 {
+    position: fixed;
+    left: 60%;
+    top: 84%;
+  }
+}
+
+@media(max-width: 1280px) {
+  .CenterButton{
+    margin-left: 25.6%;
+    margin-top: 14%;
+  }
+  
+  .menuLabel {
+    font-size: 22px;
+  }
+
+  .faButton {
+    font-size: 42px;
+  }
+
+  .menuButton {
+    width: 100px;
+    height: 100px;
+  }
+
+  #Button1 {
+    position: fixed;
+    left: 24%;
+    top: 11%;
+  }
+
+  #Button2 {
+    position: fixed;
+    left: 17.5%;
+    top: 25%;
+  }
+
+  #Button3 {
+    position: fixed;
+    left: 16%;
+    top: 44.5%;
+  }
+
+  #Button4 {
+    position: fixed;
+    left: 18%;
+    top: 66%;
+  }
+
+  #Button5 {
+    position: fixed;
+    left: 26%;
+    top: 80%;
+  }
+
+  #Button6 {
+    position: fixed;
+    left: 56%;
+    top: 11%;
+  }
+
+  #Button7 {
+    position: fixed;
+    left: 65.5%;
+    top: 25%;
+  }
+
+  #Button8 {
+    position: fixed;
+    left: 68.5%;
+    top: 45%;
+  }
+
+  #Button9 {
+    position: fixed;
+    left: 65%;
+    top: 65%;
+  }
+
+  #Button10 {
+    position: fixed;
+    left: 57%;
+    top: 80%;
+  }
+}
+
+@media(max-width: 1024px) {
+
+  .menuLabel {
+    font-size: 20px;
+  }
+
+  .menuButton {
+    width: 75px;
+    height: 75px;
+  }
+
+  #Button1 {
+    position: fixed;
+    left: 22%;
+  }
+
+  #Button2 {
+    position: fixed;
+    left: 14%;
+    top: 31%;
+  }
+
+  #Button3 {
+    position: fixed;
+    left: 9%;
+    top: 49%;
+  }
+
+  #Button4 {
+    position: fixed;
+    left: 13%;
+    top: 67%;
+  }
+
+  #Button5 {
+    position: fixed;
+    left: 23%;
+    top: 80.5%;
+  }
+
+  #Button6 {
+    position: fixed;
+    left: 56%;
+  }
+
+  #Button7 {
+    position: fixed;
+    left: 67%;
+    top: 30%;
+  }
+
+  #Button8 {
+    position: fixed;
+    left: 70.5%;
+    top: 49%;
+  }
+
+  #Button9 {
+    position: fixed;
+    left: 67%;
+    top: 67%;
+  }
+
+  #Button10 {
+    position: fixed;
+    left: 57%;
+    top: 80.5%;
+  }
+}

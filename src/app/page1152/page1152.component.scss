@@ -1,0 +1,232 @@
+.TitlePage {
+  position: fixed;
+  background: white;
+  color: #5A5A5A;
+  font-weight: bold;
+  border-radius: 30px;
+  left: 40%;
+  top: 5%;
+  width: 20%;
+  text-align: center;
+  font-size: 14px;
+}
+
+.container {
+  position: fixed;
+  top: 17%;
+  width: 100%;
+  height: 100%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.d1{
+  position: absolute;
+  overflow-y: scroll;
+  z-index: 1;
+  margin: 10px;
+  width: 20%;
+  height: 100%;
+}
+
+.d2{
+  position: absolute;
+  overflow-y: scroll;
+  margin: 10px;
+  width: 75%;
+  height: 100%;
+}
+
+table {
+  margin: auto auto;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+
+.tableBody {
+  background: white;
+  color:black;
+  padding: 15px;
+  border: 1px solid white;
+  text-align: center;
+}
+
+.tableBody tr th {
+  border-right: 1px solid white;
+}
+
+input {
+  background-color: transparent;
+}
+
+.CategoryName {
+  background: #404040;
+  color: white;
+  padding: 40px;
+  border: 1px solid white;
+  text-align: center;
+  width: 100px;
+}
+
+.ProductTable {
+  background: #404040;
+  color: white;
+  padding: 15px;
+  border: 1px solid white;
+  border-top: none;
+  text-align: center;
+}
+
+
+.QuantTable {
+  background: #404040;
+  color: white;
+  padding: 15px;
+  border: 1px solid white;
+  border-top: none;
+  text-align: center;
+}
+
+td {
+  background: #5A5A5A;
+  color: white;
+  border: 1px solid white;
+}
+
+.GreenCaseTitle {
+  background: #92D050;
+  border: 1px solid black;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.GreenCaseTitleThrid {
+  background: #92D050;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.GreenCaseTitleSecond {
+  background: #92D050;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.RedCaseTitle {
+  background: #FF6463;
+  border: 1px solid black;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.RedCaseTitleThrid {
+  background: #FF6463;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.RedCaseTitleSecond {
+  background: #FF6463;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.BlueCaseTitle {
+  background: #03CCF0;
+  border: 1px solid black;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.BlueCaseTitleThrid {
+  background: #03CCF0;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.BlueCaseTitleSecond {
+  background: #03CCF0;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.BlackCaseTitle {
+  background: black;
+  border: 1px solid gray;
+  color: gray;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.BlackCaseTitleThrid {
+  background:black;
+  border: 1px solid gray;
+  color: gray;
+  text-align: center;
+}
+
+.BlackCaseTitleSecond {
+  background: Black;
+  border: 1px solid gray;
+  color: gray;
+  text-align: center;
+}
+
+.tarifSelect{
+  position: fixed;
+  select{
+    border: none;
+    background: black;
+    color: #FF6463;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px;
+  }
+}
+
+@media(max-width: 1281px) {
+
+  
+  .tarifSelect{
+    top: 120px;
+    left: 1000px
+  }
+
+  thead tr th{
+    font-size: 15px;
+  }
+
+  .ProductTable {
+    width: 242px;
+  }
+
+  .QuantTable {
+    width: 58px;
+  }
+
+ .GreenCaseTitle, .RedCaseTitle, .BlueCaseTitle, .BlackCaseTitle{
+   width: 80px;
+   height: 75px;
+   padding-top: 25px;
+ }
+
+ .GreenCaseTitleThrid, .RedCaseTitleThrid, .BlueCaseTitleThrid, .BlackCaseTitleThrid {
+  height: 25px;
+}
+
+.GreenCaseTitleSecond, .RedCaseTitleSecond, .BlueCaseTitleSecond, .BlackCaseTitleSecond {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 70px;
+  height: 70px;
+}
+
+  .d2{
+    left: 20%;
+    width: 75%;
+  }
+
+
+}

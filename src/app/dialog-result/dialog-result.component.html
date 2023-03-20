@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>{{data.name}}</h1>
+<div mat-dialog-content>  
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.result" autofocus/>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.result">Ok</button>
+</div>

@@ -1,0 +1,139 @@
+.menuLabel {
+  color: white;
+}
+
+.CenterButton {
+  border-radius: 50%;
+  background: #5A5A5A;
+  margin-left: 25.7%;
+  margin-top: 14%;
+}
+
+.menuButton {
+  border-radius: 50%;
+  border: solid 2px white;
+  background: #5A5A5A;
+  color: white;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+input {
+  margin-left: 20px;
+  border-radius: 30px;
+  height: 35px;
+  border: solid 1px #5A5A5A;
+  color: #5A5A5A;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  text-align: center;
+}
+
+@media(max-width: 1281px) {
+  .menuLabel {
+    font-size: 22px;
+  }
+
+  .faButton {
+    font-size: 42px;
+  }
+
+  .menuButton {
+    width: 100px;
+    height: 100px;
+  }
+
+  .name{
+      position: fixed;
+      top: 48%;
+      left: 12%;
+  }
+
+  .username{
+      position: fixed;
+      top: 30%;
+      left: 65%;
+  }
+
+  .password{
+      position: fixed;
+      top: 48%;
+      left: 68%;
+  }
+
+  .confirmPassword{
+      position: fixed;
+      top: 66%;
+      left: 65%;
+  }
+}
+
+@media(max-width: 1024px) {
+  .menuLabel {
+    font-size: 20px;
+  }
+
+  .menuButton {
+    width: 75px;
+    height: 75px;
+  }
+
+  #Button1 {
+    position: fixed;
+    left: 22%;
+  }
+
+  #Button2 {
+    position: fixed;
+    left: 14%;
+    top: 31%;
+  }
+
+  #Button3 {
+    position: fixed;
+    left: 9%;
+    top: 49%;
+  }
+
+  #Button4 {
+    position: fixed;
+    left: 13%;
+    top: 67%;
+  }
+
+  #Button5 {
+    position: fixed;
+    left: 23%;
+    top: 80.5%;
+  }
+
+  #Button6 {
+    position: fixed;
+    left: 56%;
+  }
+
+  #Button7 {
+    position: fixed;
+    left: 67%;
+    top: 30%;
+  }
+
+  #Button8 {
+    position: fixed;
+    left: 70.5%;
+    top: 49%;
+  }
+
+  #Button9 {
+    position: fixed;
+    left: 67%;
+    top: 67%;
+  }
+
+  #Button10 {
+    position: fixed;
+    left: 57%;
+    top: 80.5%;
+  }
+}

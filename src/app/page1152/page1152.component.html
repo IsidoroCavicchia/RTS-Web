@@ -1,0 +1,107 @@
+
+<div class="sidebar">
+  <div class="MenuButton" >
+    <p>Valider</p>
+  </div>
+  <div class="TitlePage">
+    <p>{{ Title }}</p>
+  </div>
+  <div class="CancelButton" routerLink="/115">
+    <p>X</p>
+  </div>
+</div>
+<div class="container">
+  <div class="d1" id="source">
+    <div class="tableCategory">
+      <table>
+        <thead>
+          <tr>
+            <th id="ProductName">
+              <div class="CategoryName">
+                Corélation
+              </div>
+            </th>
+          </tr>
+          
+        </thead>
+        <tbody class="tableBody" style="border:none">
+          <tr>
+            <th style="background: #5A5A5A; color: white; border: 2px solid #5A5A5A; text-align: center;" >
+              Serveur 1
+            </th>
+          </tr>
+          <tr>
+            <th style="background: #5A5A5A; color: white; border: 2px solid #5A5A5A; text-align: center;">
+              Serveur 2
+            </th>
+          </tr>
+          <tr>
+            <th style="background: #5A5A5A; color: white; border: 2px solid #5A5A5A; text-align: center;">
+              Serveur 3
+            </th>
+          </tr>
+          <tr>
+            <th style="background: #5A5A5A; color: white; border: 2px solid #5A5A5A; text-align: center;">
+              Serveur 4
+            </th>
+          </tr>
+          <tr>
+            <th style="background: #5A5A5A; color: white; border: 2px solid #5A5A5A; text-align: center;">
+              Serveur 5
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="d2" id="target">
+    <div class="tableCategory">
+      <table>
+          <thead>
+              <tr>
+                  <th style="border: none;" colspan="10">
+                      <div class="RedCaseTitleThrid">
+                          Bars
+                      </div>
+                  </th>
+              </tr>
+              <tr>
+                  <th style="border: none;" *ngFor="let bar of bars; let i = index">
+                      <div class="RedCaseTitleSecond">
+                          Bar {{i + 1}}
+                      </div>
+                  </th>                            
+              </tr>
+          </thead>
+          <tbody style="border:none;">
+              <tr>
+                <th *ngFor="let bar of bars">
+                  <input type="checkbox"/>
+                </th>
+              </tr>
+              <tr>
+                <th *ngFor="let bar of bars">
+                  <input type="checkbox"/>
+                </th>
+              </tr>
+              <tr>
+                <th *ngFor="let bar of bars">
+                  <input type="checkbox"/>
+                </th>
+              </tr>
+              <tr>
+                <th *ngFor="let bar of bars">
+                  <input type="checkbox"/>
+                </th>
+              </tr>
+              <tr>
+                <th *ngFor="let bar of bars">
+                  <input type="checkbox"/>
+                </th>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

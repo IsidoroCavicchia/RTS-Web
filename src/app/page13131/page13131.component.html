@@ -1,0 +1,84 @@
+<div class="sidebar">
+    <div class="MenuButton" routerLink="/Menu">
+      <p>RTS</p>
+    </div>
+    <div class="CancelButton" routerLink="/1313">
+      <p>X</p>
+    </div>
+  </div>
+  <div class="SelectRoue">
+    <button class="CenterButton">
+      Bars
+    </button>
+  
+    <div *ngIf="Bars[0].IsActive">
+      <div class="Button1" class="menuLabel" id="Button1" [routerLink]="['/131321', 1]" (click)="goToBar('/131321', 1)">
+        <label>Bar 1 </label>
+        <button class="menuButton"><fa-icon class="faButton" [icon]="faGlass"></fa-icon></button>
+      </div>
+    </div>
+  
+  
+    <div *ngIf="Bars[1].IsActive">
+      <div class="Button1" class="menuLabel" id="Button2" [routerLink]="['/131321', 2]" (click)="goToBar('/131321', 2)">
+        <label>Bar 2 </label>
+        <button class="menuButton"><fa-icon class="faButton" [icon]="faGlass">  </fa-icon></button>
+      </div>
+    </div>
+  
+    <div *ngIf="Bars[2].IsActive">
+      <div class="Button1" class="menuLabel" id="Button3" [routerLink]="['/131321', 3]" (click)="goToBar('/131321', 3)">
+        <label>Bar 3 </label>
+        <button class="menuButton"><fa-icon class="faButton" [icon]="faGlass">  </fa-icon></button>
+      </div>
+    </div>
+  
+    <div *ngIf="Bars[3].IsActive">
+      <div class="Button1" class="menuLabel" id="Button4" [routerLink]="['/131321', 4]" (click)="goToBar('/131321', 4)">
+        <label>Bar 4 </label>
+        <button class="menuButton"><fa-icon class="faButton" [icon]="faGlass"></fa-icon></button>
+      </div>
+    </div>
+  
+    <div *ngIf="Bars[4].IsActive">
+      <div class="Button1" class="menuLabel" id="Button5" [routerLink]="['/131321', 5]" (click)="goToBar('/131321', 5)">
+        <label>Bar 5 </label>
+        <button class="menuButton"><fa-icon class="faButton" [icon]="faGlass">  </fa-icon></button>
+      </div>
+    </div>
+  
+    <div *ngIf="Bars[5].IsActive">
+      <div class="Button1" class="menuLabel" id="Button6" style="margin-left: 0%;" [routerLink]="['/131321', 6]" (click)="goToBar('/131321', 6)">
+        <button class="menuButton"><fa-icon class="faButton" [icon]="faGlass">  </fa-icon></button>
+        <label style="margin-left: 10px;">Bar 6 </label>
+      </div>
+    </div>
+  
+    <div *ngIf="Bars[6].IsActive">
+      <div class="Button1" class="menuLabel" id="Button7" style="margin-left: 0%;" [routerLink]="['/131321', 7]" (click)="goToBar('/131321', 7)">
+        <button class="menuButton"><fa-icon class="faButton" [icon]="faGlass">  </fa-icon></button>
+        <label style="margin-left: 10px;">Bar 7 </label>
+      </div>
+    </div>
+  
+    <div *ngIf="Bars[7].IsActive">
+      <div class="Button1" class="menuLabel" id="Button8" style="margin-left: 0%;" [routerLink]="['/131321', 8]" (click)="goToBar('/131321', 8)">
+        <button class="menuButton"><fa-icon class="faButton" [icon]="faGlass">  </fa-icon></button>
+        <label style="margin-left: 10px;">Bar 8 </label>
+      </div>
+    </div>
+  
+    <div *ngIf="Bars[8].IsActive">
+      <div class="Button1" class="menuLabel" id="Button9" style="margin-left: 0%;" [routerLink]="['/131321', 9]" (click)="goToBar('/131321', 9)">
+        <button class="menuButton"><fa-icon class="faButton" [icon]="faGlass">  </fa-icon></button>
+        <label style="margin-left: 10px;">Bar 9 </label>
+      </div>
+    </div>
+  
+    <div *ngIf="Bars[9].IsActive">
+      <div class="Button1" class="menuLabel" id="Button10" style="margin-left: 0%;" [routerLink]="['/131321', 10]" (click)="goToBar('/131321', 10)">
+        <button class="menuButton"><fa-icon class="faButton" [icon]="faGlass">  </fa-icon></button>
+        <label style="margin-left: 10px;">Bar 10 </label>
+      </div>
+    </div>
+  </div>

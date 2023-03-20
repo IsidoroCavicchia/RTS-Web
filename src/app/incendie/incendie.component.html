@@ -1,0 +1,26 @@
+<div class="sidebar">
+  <div class="MenuButton" (click)="ValidBar()">
+    <p>RTS</p>
+  </div>
+  <div class="TitlePage">
+    <p>Alerte Incendie</p>
+  </div>
+  <div class="CancelButton" routerLink="/caisse/{{BarId}}">
+    <p>X</p>
+  </div>
+</div>
+<div class="container">
+  <div class="pannel">
+    <div class="touchGestionPannel">
+      <span class="touch" style="border: 1px solid #92D050; color: #92D050;" (click)="ActivedAlarm(true)">
+        Oui
+      </span>
+      <span>
+        Confirmer l'activation de l'alarme incendie ?
+      </span>
+      <span class="touch" style="border: 1px solid #FF6463; color: #FF6463;" (click)="ActivedAlarm(false)">
+        Non
+      </span>
+    </div>
+  </div>
+</div>

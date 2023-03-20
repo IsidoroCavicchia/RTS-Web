@@ -1,0 +1,26 @@
+<div class="sidebar">
+  <div class="MenuButton" (click)="AddUser()">
+    <p>Valider</p>
+  </div>
+  <div class="CancelButton" routerLink="/116">
+    <p>X</p>
+  </div>
+</div>
+<div class="SelectRoue">
+  <button class="CenterButton" (click)="AddUser()">
+    {{BtnCenterLabel}}
+  </button>
+  <div class="name">
+    <input type="text" placeholder="Nom" #nameField [formControl]="Name" [(ngModel)]="name" value="name" (click)="openDialog('Name', Name, nameField)"/>
+  </div>
+  <div class="username">
+    <input type="text" placeholder="Nom utilisateur" #usernameField [formControl]="Username" [(ngModel)]="username" value="username" (click)="openDialog('Username', Username, usernameField)"/>
+  </div>
+  <div class="password">
+    <input type="password" placeholder="Mot de passe" #passwordField [formControl]="Password" [(ngModel)]="password" value="password" (click)="openDialog('Password', Password, passwordField)"/>
+  </div>
+  <div class="confirmPassword">
+    <input type="password" placeholder="Confirmer mot de passe" #confirmPasswordField [formControl]="ConfirmPassword" [(ngModel)]="confirmPassword" value="confirmPassword" (click)="openDialog('Confirmer mot de passe', ConfirmPassword, confirmPasswordField)"/>
+  </div>
+
+</div>

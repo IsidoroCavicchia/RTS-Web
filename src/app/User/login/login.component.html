@@ -1,0 +1,23 @@
+<div class="sidebar">
+  <div class="MenuButton" (click)="test()">
+    <p>RTS</p>
+  </div>
+  <div class="CancelButton">
+    <p>X</p>
+  </div>
+</div>
+<div class="SelectRoue">
+  <button class="CenterButton" (click)="login()">
+    <img src="../assets/logo.png" class="logo"/>
+  </button>
+
+  <div class="Username">
+    <label>{{ LbUsername }} </label>
+    <input #usernameField type="text" [formControl]="Username" [(ngModel)]="username" value="username" (click)="openDialog('Username', Username, usernameField)"/>
+  </div>
+
+  <div class="Password">
+    <input #passwordField type="password" [formControl]="Password" [(ngModel)]="password" value="password" (click)="openDialog('Password', Password, passwordField)"/>
+    <label>{{ LbPassword }}</label>
+  </div>
+</div>

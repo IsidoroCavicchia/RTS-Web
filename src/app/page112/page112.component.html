@@ -1,0 +1,53 @@
+<div class="sidebar">
+  <div class="MenuButton" (click)="validate(result)">
+    <p>Valider</p>
+  </div>
+  <div class="TitlePage">
+    <p>{{ Title }}</p>
+  </div>
+  <div class="CancelButton" routerLink="/11">
+    <p>X</p>
+  </div>
+</div>
+<div class="container">
+  <table mdbTable>
+    <thead>
+      <tr>
+        <th class="GeneralCase">Général</th>
+        <th class="InformationCase">Informations</th>
+        <th class="TarifCase">Tarif 1</th>
+        <th class="TarifCase">Tarif 2</th>
+        <th class="TarifCase">Tarif 3</th>
+        <th class="TarifCase">Tarif 4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mbdTableCol *ngFor="let el of tarifVest">
+        <th scope="row" class="TypeCase">{{ el.Type }}</th>
+        <td contenteditable="true" #Info>{{ el.Information }}</td>
+        <td contenteditable="true" #Tarif1>{{ el.Tarif1 | currency: 'EUR' : true }}</td>
+        <td contenteditable="true" #Tarif2>{{ el.Tarif2 | currency: 'EUR' : true }}</td>
+        <td contenteditable="true" #Tarif3>{{ el.Tarif3 | currency: 'EUR' : true }}</td>
+        <td contenteditable="true" #Tarif4>{{ el.Tarif4 | currency: 'EUR' : true }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <table mdbTable>
+    <thead>
+      <tr>
+        <th class="GeneralCase">Caisse</th>
+        <th class="TarifCase">Tarif</th>
+        <th class="TarifCase">Personnel</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mbdTableCol *ngFor="let ca of vest; let i = index">
+        <th scope="row" class="TypeCase">{{ ca.VestiarieName }}</th>
+        <th><select><option *ngFor="let cai of caisses" [value]="cai">{{ cai }}</option></select></th>
+        <th><select><option *ngFor="let user of users" [value]="user.UserId">{{ user.Pseudo }}</option></select></th>
+      </tr>
+    </tbody>
+  </table>
+</div>
